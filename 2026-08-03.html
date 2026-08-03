@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>每日晨報 - 2026-08-03 全球市場觀盤與台股開盤焦點</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-green: #34d399;
+            --accent-gold: #fbbf24;
+            --up-color: #ef4444;
+            --down-color: #10b981;
+            --hm-pos: #f87171;
+            --hm-neg: #34d399;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        .top-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            border-bottom: 1px solid var(--card-border);
+            padding: 14px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .history-select {
+            background: rgba(15, 23, 42, 0.9);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+        }
+        .report-date-badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto 0;
+            padding: 0 16px;
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 24px;
+        }
+        .hero-title { font-size: 1.45rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; display: flex; align-items: center; gap: 8px; }
+
+        .hero-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .highlight-item {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        @media (max-width: 640px) {
+            .highlight-item { flex-direction: column; gap: 6px; }
+        }
+        .highlight-tag {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+            display: inline-block;
+        }
+        .tag-us { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.4); }
+        .tag-global { background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); border: 1px solid rgba(192, 132, 252, 0.4); }
+        .tag-tw { background: rgba(251, 191, 36, 0.2); color: var(--accent-gold); border: 1px solid rgba(251, 191, 36, 0.4); }
+        .highlight-text { font-size: 0.92rem; color: #e2e8f0; line-height: 1.6; }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        @media (min-width: 640px) {
+            .chart-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .index-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .index-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .index-name { font-size: 1rem; font-weight: 700; color: #ffffff; }
+        .index-subname { font-size: 0.75rem; color: var(--text-muted); }
+        .index-price { font-size: 1.25rem; font-weight: 800; margin-top: 2px; }
+        .chart-container { margin-top: 10px; width: 100%; }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .section-header {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        @media (min-width: 640px) {
+            .asset-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .asset-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 14px;
+        }
+        .asset-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+        .asset-val { font-size: 1.1rem; font-weight: 700; color: #ffffff; }
+
+        .table-responsive { width: 100%; overflow-x: auto; margin-bottom: 16px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th { background: rgba(15, 23, 42, 0.8); color: var(--text-muted); padding: 10px 12px; text-align: left; font-weight: 600; }
+        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .badge-tag { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .badge-up { background: rgba(239, 68, 68, 0.15); color: var(--up-color); border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-down { background: rgba(16, 185, 129, 0.15); color: var(--down-color); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-na { background: rgba(148, 163, 184, 0.12); color: var(--text-muted); border: 1px solid rgba(148, 163, 184, 0.3); }
+        .up { color: var(--up-color); }
+        .down { color: var(--down-color); }
+
+        table.heatmap-table { border-collapse: collapse; font-size: 0.78rem; width: 100%; min-width: 780px; }
+        table.heatmap-table th, table.heatmap-table td { padding: 6px 8px; text-align: center; }
+        table.heatmap-table th { background: rgba(15,23,42,0.8); color: var(--text-muted); font-weight: 600; position: sticky; top: 0; }
+        .hm-year { text-align: left; font-weight: 700; color: var(--text-main); position: sticky; left: 0; background: var(--card-bg); }
+        .hm-cell { font-weight: 600; }
+        .hm-pos { background: rgba(248, 113, 113, 0.22); color: var(--hm-pos); }
+        .hm-neg { background: rgba(52, 211, 153, 0.22); color: var(--hm-neg); }
+        .hm-empty { color: var(--text-muted); font-weight: 400; }
+        .hm-live { outline: 1.5px dashed currentColor; outline-offset: -1.5px; }
+        .hm-mdd { color: #fbbf24; background: rgba(251, 191, 36, 0.1); }
+        .hm-avg-row .hm-year, .hm-avg-row .hm-cell { border-top: 2px solid var(--card-border); font-weight: 800; }
+        .hm-avg { background: rgba(148, 163, 184, 0.15); color: var(--text-main); }
+
+        .lookback-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+        .lookback-label { font-size: 0.8rem; color: var(--text-muted); margin-right: 2px; }
+        .lookback-chip {
+            border: 1px solid var(--card-border);
+            background: rgba(255,255,255,0.05);
+            color: var(--text-main);
+            border-radius: 999px;
+            padding: 5px 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .lookback-chip.active { background: var(--accent-blue); color: #0f172a; border-color: var(--accent-blue); }
+
+        .analysis-box {
+            background: linear-gradient(135deg, rgba(30,41,59,0.9) 0%, rgba(15,23,42,0.9) 100%);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 0 12px 12px 0;
+            padding: 16px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        .analysis-box h4 { color: var(--accent-blue); font-size: 1.05rem; margin-bottom: 8px; font-weight: 700; }
+
+        .taiwan-box {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 1) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .taiwan-header { color: var(--accent-gold); font-weight: 700; font-size: 1.2rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+
+        footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-content">
+            <span class="brand-title"><span>📈</span> FinLab 每日晨報戰情室</span>
+            <div class="header-right">
+                <select id="quickHistorySelect" class="history-select" onchange="if(this.value) window.location.href=this.value;">
+                    <option value="">📅 切換歷史日報...</option>
+                </select>
+                <div class="report-date-badge">2026-08-03</div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Hero Section with Summary Highlights -->
+        <div class="hero-banner">
+            <h1 class="hero-title"><span>🎯</span> 全球市場觀盤與台股開盤焦點速覽</h1>
+            
+            <div class="hero-highlights">
+                <div class="highlight-item">
+                    <span class="highlight-tag tag-us">美股觀盤</span>
+                    <div class="highlight-text">
+                        道瓊工業 <span class="badge-tag badge-up">+276.93 (+0.53%)</span>、標普500 <span class="badge-tag badge-up">+52.09 (+0.70%)</span>、那斯達克 <span class="badge-tag badge-up">+251.65 (+1.00%)</span>、費半 <span class="badge-tag badge-up">+8.08 (+0.07%)</span>。科技與半導體族群走強，市場持續關注 <strong>CapEx 資本支出疑慮與利潤率檢視</strong>，<strong>VIX 恐慌指數降溫至 15.99 (-6.44%)</strong>，美債 10 年期殖利率落於 <strong>4.75%</strong>。 美股以「先跌後漲」為7月劃下句點：7/31（週五）道瓊上漲276.97點（+0.53%）收52,485.03點、寫下連續第4個月收紅，標普500上漲0.70%收7,489.72點，那斯達克上漲1.00%收25,373.85點，11大類股中7類收紅、科技類股（XLK）單日勁揚5.2%領漲。個股表現分歧：Amazon延續前一日AWS財報優於預期的漲勢再漲15.63%，Alphabet亦大漲7.12%（自7/22因205億美元資本支出上修一度重挫5%後逐步收復失土），Nvidia上漲3.46%；Apple則因供應限制導致下季財測疲弱持續探底、再跌7.13%，波音、聯合健康分別下跌1.90%、1.58%，Exxon因煉油產能有限未能完全受惠於油價走高而下跌約1%。同時30年期公債殖利率本週彈升至5.25%、創2007年來新高，10年期殖利率亦逼近4.7%，顯示股市在AI資本支出樂觀情緒與殖利率走升的緊繃拉鋸中仍選擇上攻。
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-tag tag-global">全球資產</span>
+                    <div class="highlight-text">
+                        美元指數報 <strong>99.76</strong>，紐約黃金 <strong>$4,133.70</strong>，輕原油 <strong>$80.80</strong>；歐亞股市隨半導體族群分化，市場避險資金逐漸向低估值、高股息與防禦型板塊轉移。 美元指數回落0.16%至99.76，美元/台幣持平於32.29；美債10年期殖利率彈升1.76%至4.75%，延續「higher for longer」疑慮；黃金小漲0.64%至4,133.30美元，避險買盤溫和；原油則重挫4.55%至80.82美元，儘管中東美伊軍事緊張仍未解除，油價走勢顯示市場對立即衝突升級的定價已明顯降溫。歐股全面走揚，日經225受晶片股補漲與日銀維持利率不變激勵大漲4.03%創64,362.02點，南韓KOSPI在三星、SK海力士雙雙帶量反彈下狂飆17.91%、寫下史上最大單日漲幅，惟新加坡STI仍小跌0.79%。
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-tag tag-tw">台股開盤</span>
+                    <div class="highlight-text">
+                        台積電 ADR 報 <strong>404.25 (+0.23%)</strong>，美元/新台幣 <strong>32.29</strong>。開盤電子權值股可望取得扣抵挹注，操盤準則建議<strong>「重質不重量、控制總持倉」</strong>、落實嚴格風控。 台股7/31（週五）在台積電衝上漲停（+220元收2,425元，貢獻大盤1,746點）、聯發科、日月光投控、信驊、川湖等權值與高價股齊漲停帶動下，加權指數狂飆3,186.45點（史上最大單日漲點）收43,119.75點，成交值達新台幣8,337.13億元，惟本週仍累計下跌535.09點、7月全月累計下跌3,006.16點。今日觀察重點：SOX費半週五僅小漲0.07%、台積電ADR僅+0.23%，較週四的爆發性補漲明顯降溫，加上南韓記憶體股歷經史上最深修正（自6月高點9,114點跌至7月低點約5,500-5,700點，跌幅逾30%）後才出現史上最大單日反彈，市場人士周代運提醒本輪急漲主因是外資回補空單與超跌反彈、而非基本面驅動，8月台股大機率呈現區間震盪整理（39,000~45,000點）而非單向上攻，建議留意外資是否延續買超半導體、以及台積電、聯發科能否延續逆勢強勢。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Financial News Digest (US & Taiwan, agent-curated) -->
+        
+        <div class="section-card" style="border-left: 4px solid var(--accent-blue);">
+            <div class="section-header" style="color:var(--accent-blue);">
+                <span>📰</span> 今日財經焦點新聞 (Daily Financial News Digest)
+            </div>
+            <h4 style="color:var(--accent-blue); margin:4px 0 8px;">🇺🇸 美國財經焦點新聞 (Reuters／Bloomberg／CNBC／Investing.com)</h4>
+            
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-green); margin-bottom:6px;">CNBC</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>S&P 500 closes higher Friday as Amazon surges; Dow posts fourth straight winning month</strong> — 美股週五收紅，道瓊連4個月收漲，Amazon財報帶動股價續漲。</li><li style="margin-bottom:4px;"><strong>Apple's stock drops as supply constraints lead to weak revenue guidance</strong> — Apple因供應限制與財測疲弱持續探底，週五再跌逾7%。</li><li style="margin-bottom:4px;"><strong>South Korea's Kospi, Samsung, SK Hynix: meltdown to record rebound</strong> — 南韓股市歷經7月史上最深修正後出現史上最大反彈。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">Washington Post</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>How major US stock indexes fared Friday 7/31/2026</strong> — 那斯達克+1%、標普+0.7%、道瓊+0.53%，為動盪的7月劃下反彈句點。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">Benzinga</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>Leading And Lagging Sectors For July 31, 2026</strong> — 科技類股（XLK）單日勁揚5.2%領漲，11類股中7類收紅。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-gold); margin-bottom:6px;">Investing.com</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>Alphabet Q2 2026 slides: 24% revenue growth, cloud surges despite capex</strong> — Alphabet雲端營收年增82%，惟資本支出上修至205億美元一度引發股價重挫。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-purple); margin-bottom:6px;">Bloomberg</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>Nikkei 225: Tokyo surges 4.03% as Bank of Japan holds rates and chip stocks rally</strong> — 日經225在日銀維持利率不變與晶片股補漲下大漲逾4%。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">TradingKey</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>Samsung, SK Hynix shares jump nearly 30%; Kospi posts record daily gain</strong> — 南韓記憶體雙雄漲停帶動KOSPI創史上最大單日漲幅。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">CNN</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>US-Iran war: State Department warns US citizens across the Middle East</strong> — 美國正評估對伊朗新一輪軍事行動，中東地緣風險尚未解除。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">Britannica</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>Saudi crown prince urged Trump not to escalate Iran war</strong> — 沙烏地王儲籲川普勿再升級對伊朗軍事行動。</li></ul>
+            </div>
+            <h4 style="color:var(--accent-gold); margin:16px 0 8px;">🇹🇼 台灣財經焦點新聞 (工商時報／經濟日報)</h4>
+            
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">TaroNews</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>台股大漲3186點，收43119點 創史上最大漲點</strong> — 台積電漲停貢獻大盤1746點，台股創下史上最大單日漲點紀錄。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">聯合新聞網</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>四大名師看8月台股 築底震盪、上看45K</strong> — 四大投顧法人預期8月台股區間震盪整理，區間看40,000~45,000點。</li><li style="margin-bottom:4px;"><strong>台股劇震洗出場 法人：想想你是在投機，還是投資</strong> — 法人提醒投資人留意近期劇烈震盪下的投機性交易風險。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">壹蘋新聞網</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>8月台股怎麼投資？法人：不宜追高搶反彈 留意輝達財報風向</strong> — 元大投顧建議降低槓桿、保留現金，緊盯Nvidia 8/26財報與外資動向。</li><li style="margin-bottom:4px;"><strong>台股大漲別急追！專家示警8月震盪 後市關鍵看2點</strong> — 分析師提醒本輪急漲主因是外資回補空單與超跌反彈，非基本面轉強。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">鉅亨網</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>中鴻8月內銷盤價每公噸跌800元 亞洲鋼價走勢分化</strong> — 中鴻因終端需求復甦待時、亞洲鋼價走弱，8月盤價調降。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">工商時報</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>友達總經理異動 柯富仁請辭、財務長張博儀接任</strong> — 面板廠友達光電董事會通過總經理異動案。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">Yahoo奇摩股市</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>鋼鐵股全面點火！中鋼、中鴻雙雙漲停 AI智慧鋼廠成市場新焦點</strong> — 在台股歷史級反彈行情中，中鋼、中鴻同步漲停，AI智慧鋼廠題材成新焦點。</li></ul>
+            </div>
+            <p style="font-size:0.72rem; color:var(--text-muted); margin-top:6px;">
+                以上新聞由 AI Agent 於執行「晨報」當下即時檢視各媒體站台整理而成，非程式碼自動爬蟲抓取；若當次未提供，此區塊顯示「本次無擷取到焦點新聞」，不影響其餘報告內容。
+            </p>
+        </div>
+    
+
+        <!-- Section 1: US 4 Major Indices & Intraday Sparklines -->
+        <div class="section-card">
+            <div class="section-header">
+                美股四大指數與費半表現 (含日內走勢)
+            </div>
+            <div class="chart-grid">
+                <div class="index-card">
+                    <div class="index-header">
+                        <div>
+                            <div class="index-name">道瓊工業指數</div>
+                            <div class="index-subname">Dow Jones (DJI)</div>
+                        </div>
+                        <span class="badge-tag badge-up">+276.93 (+0.53%)</span>
+                    </div>
+                    <div class="index-price up">52,485.03</div>
+                    <div class="chart-container"><svg viewBox="0 0 320 90" width="100%" height="90" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_dji_6088" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#ef4444" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="90" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <line x1="10" y1="55.2" x2="310" y2="55.2" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+      <path d="M 10.0,34.6 L 13.8,43.1 L 17.7,40.8 L 21.5,50.6 L 25.4,52.1 L 29.2,54.7 L 33.1,61.6 L 36.9,67.1 L 40.8,69.9 L 44.6,73.4 L 48.5,65.9 L 52.3,59.0 L 56.2,60.3 L 60.0,57.6 L 63.8,55.1 L 67.7,53.2 L 71.5,51.5 L 75.4,47.1 L 79.2,46.9 L 83.1,49.2 L 86.9,44.0 L 90.8,47.6 L 94.6,49.8 L 98.5,52.2 L 102.3,50.4 L 106.2,42.7 L 110.0,44.3 L 113.8,46.2 L 117.7,40.3 L 121.5,36.6 L 125.4,37.2 L 129.2,39.0 L 133.1,36.2 L 136.9,37.1 L 140.8,32.0 L 144.6,34.3 L 148.5,31.4 L 152.3,33.5 L 156.2,33.5 L 160.0,32.7 L 163.8,32.2 L 167.7,33.3 L 171.5,32.4 L 175.4,33.3 L 179.2,30.4 L 183.1,30.0 L 186.9,26.6 L 190.8,25.4 L 194.6,26.5 L 198.5,28.4 L 202.3,28.4 L 206.2,31.2 L 210.0,29.4 L 213.8,30.3 L 217.7,28.5 L 221.5,25.9 L 225.4,25.6 L 229.2,24.7 L 233.1,23.7 L 236.9,24.8 L 240.8,25.8 L 244.6,27.0 L 248.5,25.3 L 252.3,24.9 L 256.2,25.6 L 260.0,25.8 L 263.8,28.2 L 267.7,25.7 L 271.5,24.8 L 275.4,20.2 L 279.2,19.4 L 283.1,21.5 L 286.9,24.5 L 290.8,19.4 L 294.6,16.6 L 298.5,16.9 L 302.3,19.8 L 306.2,29.2 L 310.0,29.1 L 310.0,85 L 10,85 Z" fill="url(#grad_dji_6088)"/>
+      <path d="M 10.0,34.6 L 13.8,43.1 L 17.7,40.8 L 21.5,50.6 L 25.4,52.1 L 29.2,54.7 L 33.1,61.6 L 36.9,67.1 L 40.8,69.9 L 44.6,73.4 L 48.5,65.9 L 52.3,59.0 L 56.2,60.3 L 60.0,57.6 L 63.8,55.1 L 67.7,53.2 L 71.5,51.5 L 75.4,47.1 L 79.2,46.9 L 83.1,49.2 L 86.9,44.0 L 90.8,47.6 L 94.6,49.8 L 98.5,52.2 L 102.3,50.4 L 106.2,42.7 L 110.0,44.3 L 113.8,46.2 L 117.7,40.3 L 121.5,36.6 L 125.4,37.2 L 129.2,39.0 L 133.1,36.2 L 136.9,37.1 L 140.8,32.0 L 144.6,34.3 L 148.5,31.4 L 152.3,33.5 L 156.2,33.5 L 160.0,32.7 L 163.8,32.2 L 167.7,33.3 L 171.5,32.4 L 175.4,33.3 L 179.2,30.4 L 183.1,30.0 L 186.9,26.6 L 190.8,25.4 L 194.6,26.5 L 198.5,28.4 L 202.3,28.4 L 206.2,31.2 L 210.0,29.4 L 213.8,30.3 L 217.7,28.5 L 221.5,25.9 L 225.4,25.6 L 229.2,24.7 L 233.1,23.7 L 236.9,24.8 L 240.8,25.8 L 244.6,27.0 L 248.5,25.3 L 252.3,24.9 L 256.2,25.6 L 260.0,25.8 L 263.8,28.2 L 267.7,25.7 L 271.5,24.8 L 275.4,20.2 L 279.2,19.4 L 283.1,21.5 L 286.9,24.5 L 290.8,19.4 L 294.6,16.6 L 298.5,16.9 L 302.3,19.8 L 306.2,29.2 L 310.0,29.1" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="29.1" r="4" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="308" y="51.2" fill="#94a3b8" font-size="9" text-anchor="end">平盤 52,208.1</text>
+    </svg></div>
+                </div>
+
+                <div class="index-card">
+                    <div class="index-header">
+                        <div>
+                            <div class="index-name">標普 500 指數</div>
+                            <div class="index-subname">S&P 500 (SPX)</div>
+                        </div>
+                        <span class="badge-tag badge-up">+52.09 (+0.70%)</span>
+                    </div>
+                    <div class="index-price up">7,489.72</div>
+                    <div class="chart-container"><svg viewBox="0 0 320 90" width="100%" height="90" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_spx_6088" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#ef4444" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="90" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <line x1="10" y1="56.8" x2="310" y2="56.8" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+      <path d="M 10.0,29.0 L 13.8,40.5 L 17.7,47.3 L 21.5,50.9 L 25.4,53.8 L 29.2,53.6 L 33.1,62.7 L 36.9,69.9 L 40.8,73.4 L 44.6,72.1 L 48.5,67.7 L 52.3,62.0 L 56.2,61.6 L 60.0,57.9 L 63.8,56.0 L 67.7,51.1 L 71.5,52.5 L 75.4,50.6 L 79.2,50.7 L 83.1,54.4 L 86.9,52.5 L 90.8,54.0 L 94.6,58.8 L 98.5,63.7 L 102.3,61.3 L 106.2,53.4 L 110.0,55.1 L 113.8,57.3 L 117.7,49.1 L 121.5,47.7 L 125.4,46.9 L 129.2,47.8 L 133.1,45.4 L 136.9,46.5 L 140.8,40.7 L 144.6,40.4 L 148.5,38.3 L 152.3,39.8 L 156.2,41.6 L 160.0,39.5 L 163.8,39.0 L 167.7,38.7 L 171.5,36.4 L 175.4,38.1 L 179.2,35.6 L 183.1,34.3 L 186.9,31.2 L 190.8,29.5 L 194.6,29.3 L 198.5,32.2 L 202.3,31.9 L 206.2,35.3 L 210.0,33.5 L 213.8,34.5 L 217.7,33.1 L 221.5,32.0 L 225.4,33.0 L 229.2,30.8 L 233.1,29.5 L 236.9,31.4 L 240.8,31.0 L 244.6,32.5 L 248.5,31.1 L 252.3,29.5 L 256.2,30.0 L 260.0,30.5 L 263.8,31.9 L 267.7,30.4 L 271.5,29.6 L 275.4,22.9 L 279.2,23.1 L 283.1,23.2 L 286.9,24.9 L 290.8,22.7 L 294.6,20.0 L 298.5,17.4 L 302.3,16.6 L 306.2,28.0 L 310.0,27.9 L 310.0,85 L 10,85 Z" fill="url(#grad_spx_6088)"/>
+      <path d="M 10.0,29.0 L 13.8,40.5 L 17.7,47.3 L 21.5,50.9 L 25.4,53.8 L 29.2,53.6 L 33.1,62.7 L 36.9,69.9 L 40.8,73.4 L 44.6,72.1 L 48.5,67.7 L 52.3,62.0 L 56.2,61.6 L 60.0,57.9 L 63.8,56.0 L 67.7,51.1 L 71.5,52.5 L 75.4,50.6 L 79.2,50.7 L 83.1,54.4 L 86.9,52.5 L 90.8,54.0 L 94.6,58.8 L 98.5,63.7 L 102.3,61.3 L 106.2,53.4 L 110.0,55.1 L 113.8,57.3 L 117.7,49.1 L 121.5,47.7 L 125.4,46.9 L 129.2,47.8 L 133.1,45.4 L 136.9,46.5 L 140.8,40.7 L 144.6,40.4 L 148.5,38.3 L 152.3,39.8 L 156.2,41.6 L 160.0,39.5 L 163.8,39.0 L 167.7,38.7 L 171.5,36.4 L 175.4,38.1 L 179.2,35.6 L 183.1,34.3 L 186.9,31.2 L 190.8,29.5 L 194.6,29.3 L 198.5,32.2 L 202.3,31.9 L 206.2,35.3 L 210.0,33.5 L 213.8,34.5 L 217.7,33.1 L 221.5,32.0 L 225.4,33.0 L 229.2,30.8 L 233.1,29.5 L 236.9,31.4 L 240.8,31.0 L 244.6,32.5 L 248.5,31.1 L 252.3,29.5 L 256.2,30.0 L 260.0,30.5 L 263.8,31.9 L 267.7,30.4 L 271.5,29.6 L 275.4,22.9 L 279.2,23.1 L 283.1,23.2 L 286.9,24.9 L 290.8,22.7 L 294.6,20.0 L 298.5,17.4 L 302.3,16.6 L 306.2,28.0 L 310.0,27.9" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="27.9" r="4" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="308" y="52.8" fill="#94a3b8" font-size="9" text-anchor="end">平盤 7,437.6</text>
+    </svg></div>
+                </div>
+
+                <div class="index-card">
+                    <div class="index-header">
+                        <div>
+                            <div class="index-name">那斯達克指數</div>
+                            <div class="index-subname">Nasdaq Composite (IXIC)</div>
+                        </div>
+                        <span class="badge-tag badge-up">+251.65 (+1.00%)</span>
+                    </div>
+                    <div class="index-price up">25,373.85</div>
+                    <div class="chart-container"><svg viewBox="0 0 320 90" width="100%" height="90" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ixic_6088" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#ef4444" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="90" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <line x1="10" y1="61.7" x2="310" y2="61.7" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+      <path d="M 10.0,20.2 L 13.8,34.3 L 17.7,43.0 L 21.5,49.4 L 25.4,50.7 L 29.2,49.6 L 33.1,59.4 L 36.9,69.6 L 40.8,73.4 L 44.6,67.9 L 48.5,66.7 L 52.3,61.4 L 56.2,60.3 L 60.0,55.5 L 63.8,54.9 L 67.7,47.2 L 71.5,50.5 L 75.4,48.6 L 79.2,49.3 L 83.1,53.7 L 86.9,53.0 L 90.8,54.3 L 94.6,61.2 L 98.5,68.1 L 102.3,66.5 L 106.2,59.1 L 110.0,61.6 L 113.8,64.2 L 117.7,53.8 L 121.5,53.6 L 125.4,51.6 L 129.2,53.1 L 133.1,50.1 L 136.9,51.1 L 140.8,44.8 L 144.6,43.3 L 148.5,41.6 L 152.3,42.9 L 156.2,46.3 L 160.0,43.5 L 163.8,42.9 L 167.7,41.9 L 171.5,38.8 L 175.4,41.5 L 179.2,39.0 L 183.1,36.9 L 186.9,33.0 L 190.8,31.6 L 194.6,30.5 L 198.5,33.4 L 202.3,33.5 L 206.2,36.9 L 210.0,34.7 L 213.8,36.0 L 217.7,35.0 L 221.5,34.6 L 225.4,36.2 L 229.2,33.3 L 233.1,32.4 L 236.9,34.7 L 240.8,33.5 L 244.6,34.8 L 248.5,34.1 L 252.3,31.9 L 256.2,31.6 L 260.0,33.0 L 263.8,33.8 L 267.7,33.1 L 271.5,32.3 L 275.4,25.6 L 279.2,26.5 L 283.1,26.3 L 286.9,27.1 L 290.8,26.8 L 294.6,23.8 L 298.5,20.5 L 302.3,16.6 L 306.2,28.0 L 310.0,27.8 L 310.0,85 L 10,85 Z" fill="url(#grad_ixic_6088)"/>
+      <path d="M 10.0,20.2 L 13.8,34.3 L 17.7,43.0 L 21.5,49.4 L 25.4,50.7 L 29.2,49.6 L 33.1,59.4 L 36.9,69.6 L 40.8,73.4 L 44.6,67.9 L 48.5,66.7 L 52.3,61.4 L 56.2,60.3 L 60.0,55.5 L 63.8,54.9 L 67.7,47.2 L 71.5,50.5 L 75.4,48.6 L 79.2,49.3 L 83.1,53.7 L 86.9,53.0 L 90.8,54.3 L 94.6,61.2 L 98.5,68.1 L 102.3,66.5 L 106.2,59.1 L 110.0,61.6 L 113.8,64.2 L 117.7,53.8 L 121.5,53.6 L 125.4,51.6 L 129.2,53.1 L 133.1,50.1 L 136.9,51.1 L 140.8,44.8 L 144.6,43.3 L 148.5,41.6 L 152.3,42.9 L 156.2,46.3 L 160.0,43.5 L 163.8,42.9 L 167.7,41.9 L 171.5,38.8 L 175.4,41.5 L 179.2,39.0 L 183.1,36.9 L 186.9,33.0 L 190.8,31.6 L 194.6,30.5 L 198.5,33.4 L 202.3,33.5 L 206.2,36.9 L 210.0,34.7 L 213.8,36.0 L 217.7,35.0 L 221.5,34.6 L 225.4,36.2 L 229.2,33.3 L 233.1,32.4 L 236.9,34.7 L 240.8,33.5 L 244.6,34.8 L 248.5,34.1 L 252.3,31.9 L 256.2,31.6 L 260.0,33.0 L 263.8,33.8 L 267.7,33.1 L 271.5,32.3 L 275.4,25.6 L 279.2,26.5 L 283.1,26.3 L 286.9,27.1 L 290.8,26.8 L 294.6,23.8 L 298.5,20.5 L 302.3,16.6 L 306.2,28.0 L 310.0,27.8" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="27.8" r="4" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="308" y="57.7" fill="#94a3b8" font-size="9" text-anchor="end">平盤 25,122.2</text>
+    </svg></div>
+                </div>
+
+                <div class="index-card">
+                    <div class="index-header">
+                        <div>
+                            <div class="index-name">費城半導體指數</div>
+                            <div class="index-subname">PHLX Semiconductor (SOX)</div>
+                        </div>
+                        <span class="badge-tag badge-up">+8.08 (+0.07%)</span>
+                    </div>
+                    <div class="index-price up">11,311.08</div>
+                    <div class="chart-container"><svg viewBox="0 0 320 90" width="100%" height="90" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_sox_6088" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#ef4444" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="90" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <line x1="10" y1="70.6" x2="310" y2="70.6" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+      <path d="M 10.0,16.6 L 13.8,33.0 L 17.7,51.1 L 21.5,56.1 L 25.4,59.1 L 29.2,52.2 L 33.1,62.2 L 36.9,73.4 L 40.8,70.9 L 44.6,61.1 L 48.5,62.9 L 52.3,57.7 L 56.2,55.8 L 60.0,54.0 L 63.8,58.3 L 67.7,52.7 L 71.5,54.9 L 75.4,54.9 L 79.2,53.1 L 83.1,57.7 L 86.9,59.7 L 90.8,60.0 L 94.6,65.8 L 98.5,68.6 L 102.3,67.1 L 106.2,62.4 L 110.0,66.1 L 113.8,67.1 L 117.7,62.5 L 121.5,64.4 L 125.4,63.2 L 129.2,64.0 L 133.1,64.4 L 136.9,64.3 L 140.8,62.1 L 144.6,58.6 L 148.5,57.7 L 152.3,57.9 L 156.2,63.3 L 160.0,62.0 L 163.8,60.2 L 167.7,59.0 L 171.5,57.0 L 175.4,58.9 L 179.2,56.5 L 183.1,55.1 L 186.9,54.2 L 190.8,52.8 L 194.6,50.8 L 198.5,52.7 L 202.3,52.6 L 206.2,55.5 L 210.0,53.6 L 213.8,54.7 L 217.7,55.2 L 221.5,56.1 L 225.4,60.7 L 229.2,58.4 L 233.1,58.4 L 236.9,58.4 L 240.8,57.0 L 244.6,56.9 L 248.5,57.5 L 252.3,56.8 L 256.2,56.2 L 260.0,57.5 L 263.8,60.1 L 267.7,60.2 L 271.5,59.8 L 275.4,56.6 L 279.2,57.8 L 283.1,57.5 L 286.9,58.3 L 290.8,60.2 L 294.6,59.1 L 298.5,56.6 L 302.3,59.9 L 306.2,69.8 L 310.0,69.8 L 310.0,85 L 10,85 Z" fill="url(#grad_sox_6088)"/>
+      <path d="M 10.0,16.6 L 13.8,33.0 L 17.7,51.1 L 21.5,56.1 L 25.4,59.1 L 29.2,52.2 L 33.1,62.2 L 36.9,73.4 L 40.8,70.9 L 44.6,61.1 L 48.5,62.9 L 52.3,57.7 L 56.2,55.8 L 60.0,54.0 L 63.8,58.3 L 67.7,52.7 L 71.5,54.9 L 75.4,54.9 L 79.2,53.1 L 83.1,57.7 L 86.9,59.7 L 90.8,60.0 L 94.6,65.8 L 98.5,68.6 L 102.3,67.1 L 106.2,62.4 L 110.0,66.1 L 113.8,67.1 L 117.7,62.5 L 121.5,64.4 L 125.4,63.2 L 129.2,64.0 L 133.1,64.4 L 136.9,64.3 L 140.8,62.1 L 144.6,58.6 L 148.5,57.7 L 152.3,57.9 L 156.2,63.3 L 160.0,62.0 L 163.8,60.2 L 167.7,59.0 L 171.5,57.0 L 175.4,58.9 L 179.2,56.5 L 183.1,55.1 L 186.9,54.2 L 190.8,52.8 L 194.6,50.8 L 198.5,52.7 L 202.3,52.6 L 206.2,55.5 L 210.0,53.6 L 213.8,54.7 L 217.7,55.2 L 221.5,56.1 L 225.4,60.7 L 229.2,58.4 L 233.1,58.4 L 236.9,58.4 L 240.8,57.0 L 244.6,56.9 L 248.5,57.5 L 252.3,56.8 L 256.2,56.2 L 260.0,57.5 L 263.8,60.1 L 267.7,60.2 L 271.5,59.8 L 275.4,56.6 L 279.2,57.8 L 283.1,57.5 L 286.9,58.3 L 290.8,60.2 L 294.6,59.1 L 298.5,56.6 L 302.3,59.9 L 306.2,69.8 L 310.0,69.8" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="69.8" r="4" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="308" y="66.6" fill="#94a3b8" font-size="9" text-anchor="end">平盤 11,303.0</text>
+    </svg></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Forex, Bonds & Gold / Commodities -->
+        <div class="section-card">
+            <div class="section-header">
+                <span>💱</span> 外匯、債市與黃金/大宗商品 (Forex, Bonds & Commodities)
+            </div>
+            <div class="asset-grid">
+                <div class="asset-card">
+                    <div class="asset-label">💵 美元指數 (DXY)</div>
+                    <div class="asset-val">99.76</div>
+                    <div style="font-size:0.8rem; margin-top:4px;"><span class="badge-tag badge-down">-0.15 (-0.15%)</span></div>
+                </div>
+                <div class="asset-card">
+                    <div class="asset-label">🇹🇼 美元 / 新台幣 (USD/TWD)</div>
+                    <div class="asset-val">32.29</div>
+                    <div style="font-size:0.8rem; margin-top:4px;"><span class="badge-tag badge-down">-0.00 (-0.01%)</span></div>
+                </div>
+                <div class="asset-card">
+                    <div class="asset-label">🇯🇵 美元 / 日圓 (USD/JPY)</div>
+                    <div class="asset-val">157.85</div>
+                    <div style="font-size:0.8rem; margin-top:4px;"><span class="badge-tag badge-up">+0.45 (+0.28%)</span></div>
+                </div>
+                <div class="asset-card">
+                    <div class="asset-label">📉 美國 10 年期國債殖利率</div>
+                    <div class="asset-val">4.75%</div>
+                    <div style="font-size:0.8rem; margin-top:4px;"><span class="badge-tag badge-up">+0.08 (+1.76%)</span></div>
+                </div>
+                <div class="asset-card">
+                    <div class="asset-label">🪙 紐約黃金期貨 (Gold)</div>
+                    <div class="asset-val">$4,133.70</div>
+                    <div style="font-size:0.8rem; margin-top:4px;"><span class="badge-tag badge-up">+26.70 (+0.65%)</span></div>
+                </div>
+                <div class="asset-card">
+                    <div class="asset-label">🛢️ 紐約輕原油期貨 (WTI)</div>
+                    <div class="asset-val">$80.80</div>
+                    <div style="font-size:0.8rem; margin-top:4px;"><span class="badge-tag badge-down">-3.87 (-4.57%)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Global Regional Stock Markets -->
+        <div class="section-card">
+            <div class="section-header">
+                <span>🌐</span> 全球區域股市表現 (美洲 / 歐洲 / 亞太與東南亞)
+            </div>
+
+            <h4 style="color:var(--accent-blue); margin:12px 0 8px;">🇪🇺 歐洲主要指數</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr><th>市場 / 指數名稱</th><th>最新收盤</th><th>當日漲跌</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>英國富時 100 (FTSE 100)</strong></td><td>10,868.05</td><td><span class="badge-tag badge-down">-29.25 (-0.27%)</span></td></tr>
+                        <tr><td><strong>德國 DAX 指數</strong></td><td>25,629.24</td><td><span class="badge-tag badge-up">+17.24 (+0.07%)</span></td></tr>
+                        <tr><td><strong>法國 CAC 40 指數</strong></td><td>8,509.64</td><td><span class="badge-tag badge-up">+24.00 (+0.28%)</span></td></tr>
+                        <tr><td><strong>歐洲斯托克 50 (Euro Stoxx 50)</strong></td><td>6,358.01</td><td><span class="badge-tag badge-up">+13.61 (+0.21%)</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 style="color:var(--accent-purple); margin:16px 0 8px;">🌏 亞太與東南亞主要指數</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr><th>市場 / 指數名稱</th><th>最新收盤</th><th>當日漲跌</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>日本日經 225 (Nikkei 225)</strong></td><td>64,362.02</td><td><span class="badge-tag badge-up">+0.00 (+0.00%)</span></td></tr>
+                        <tr><td><strong>南韓 KOSPI 指數</strong></td><td>6,595.45</td><td><span class="badge-tag badge-up">+1001.89 (+17.91%)</span></td></tr>
+                        <tr><td><strong>印度 Nifty 50 指數</strong></td><td>24,383.60</td><td><span class="badge-tag badge-up">+66.40 (+0.27%)</span></td></tr>
+                        <tr><td><strong>新加坡海峽時報指數 (STI)</strong></td><td>5,628.50</td><td><span class="badge-tag badge-down">-45.08 (-0.79%)</span></td></tr>
+                        <tr><td><strong>泰國 SET 指數</strong></td><td>1,623.64</td><td><span class="badge-tag badge-up">+25.53 (+1.60%)</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3.5: International Steel Market (CSC independent-director panel) -->
+        
+        <div class="section-card" style="border-left: 4px solid var(--accent-green);">
+            <div class="section-header" style="color:var(--accent-green);">
+                <span>🏭</span> 國際鋼市 (Global Steel Market)
+            </div>
+            <h4 style="color:var(--accent-green); margin:4px 0 8px;">⚙️ 原物料與成品價格 / 冶煉利差 (Price &amp; Spread)</h4>
+            <p style="font-size:0.9rem; line-height:1.7; color:var(--text-main);">中鋼、中鴻8月內銷盤價同步全面調降每公噸新台幣800元，主因終端需求復甦仍需時間、加上亞洲鋼價走弱使買盤觀望氣氛加劇；歐盟自7/1起實施新版鋼鐵關稅配額制度，全年免稅進口配額大砍47%至1,830萬噸，超額部分課徵50%關稅，持續壓縮亞系鋼廠對歐出口空間；中國7月上旬全國粗鋼日均產量較前期回升2.6%，惟全年減產目標（較2025年降2.2%至約9.4億噸）方向未變，短期供給過剩壓力尚未緩解，原物料端（鐵礦砂、焦煤）缺乏穩定即時報價可供查證，冶煉利差變化仍待下一輪數據確認。</p>
+            <h4 style="color:var(--accent-blue); margin:16px 0 8px;">🏛️ 國際龍頭鋼廠股價與新聞雷達 (Peer Intelligence)</h4>
+            <div class="table-responsive">
+        <table>
+            <thead><tr><th>公司 / 代碼</th><th>最新股價（原幣別）</th><th>當日漲跌</th></tr></thead>
+            <tbody><tr>
+            <td><strong>中鋼 China Steel</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">台灣・中鋼集團（2002.TW, TWD）</span></td>
+            <td>18.95</td>
+            <td><span class="badge-tag badge-up">+0.00 (+0.00%)</span></td>
+        </tr><tr>
+            <td><strong>中鴻 Chun Yuan Steel</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">台灣・中鋼集團（2014.TW, TWD）</span></td>
+            <td>16.60</td>
+            <td><span class="badge-tag badge-up">+0.00 (+0.00%)</span></td>
+        </tr><tr>
+            <td><strong>Nucor</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">美國（NUE, USD）</span></td>
+            <td>257.29</td>
+            <td><span class="badge-tag badge-up">+0.25 (+0.10%)</span></td>
+        </tr><tr>
+            <td><strong>Cleveland-Cliffs</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">美國（CLF, USD）</span></td>
+            <td>11.52</td>
+            <td><span class="badge-tag badge-down">-0.11 (-0.95%)</span></td>
+        </tr><tr>
+            <td><strong>ArcelorMittal</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">歐洲/全球（MT, USD）</span></td>
+            <td>70.14</td>
+            <td><span class="badge-tag badge-up">+0.80 (+1.15%)</span></td>
+        </tr><tr>
+            <td><strong>日本製鐵 Nippon Steel</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">日本（5401.T, JPY）</span></td>
+            <td>649.60</td>
+            <td><span class="badge-tag badge-down">-10.40 (-1.58%)</span></td>
+        </tr><tr>
+            <td><strong>POSCO Holdings</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">韓國（005490.KS, KRW）</span></td>
+            <td>312,500.00</td>
+            <td><span class="badge-tag badge-up">+12000.00 (+3.99%)</span></td>
+        </tr><tr>
+            <td><strong>寶山鋼鐵 Baosteel</strong><br><span style="font-size:0.72rem; color:var(--text-muted);">中國（600019.SS, CNY）</span></td>
+            <td>6.13</td>
+            <td><span class="badge-tag badge-down">-0.13 (-2.08%)</span></td>
+        </tr></tbody>
+        </table>
+    </div>
+            
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">IndexBox</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>ArcelorMittal reports second quarter 2026 results, EBITDA $2.1 billion</strong> — 安賽樂米塔爾2Q26 EBITDA達21億美元、噸鋼毛利155美元，遠高於歷史平均水準。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">鉅亨網</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>中鴻8月內銷盤價每公噸跌800元 亞洲鋼價走勢分化</strong> — 中鴻表示核心原料成本仍支撐鋼價，惟終端需求疲弱使本次盤價適度調降。</li></ul>
+            </div>
+            <div style="margin-bottom:14px;">
+                <div style="font-size:0.82rem; font-weight:700; color:var(--accent-blue); margin-bottom:6px;">NOWnews</div>
+                <ul style="margin:0; padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-main);"><li style="margin-bottom:4px;"><strong>買盤觀望終端需求低！中鋼8月鋼鐵盤價每公噸全面下調新台幣800元</strong> — 中鋼因國內流通行情隨亞洲鋼價走跌，8月盤價全面調降因應。</li></ul>
+            </div>
+            
+            <div style="margin-top:20px; padding-top:16px; border-top:1px dashed rgba(148,163,184,0.3);">
+                <div style="font-size:0.95rem; font-weight:700; color:var(--accent-purple); margin-bottom:8px;">📅 週一戰略專題 (Weekly Strategic Deep Dive)</div>
+                
+                
+        <h4 style="color:var(--accent-purple); margin:16px 0 8px;">🌿 綠能轉型與 CBAM (ESG &amp; Carbon)</h4>
+        <p style="font-size:0.9rem; line-height:1.7;">歐盟碳邊境調整機制（CBAM）自2026年正式對鋼鐵等首批六大產業課徵碳關稅，中國出口歐盟鋼品若無法提供有效低碳認證，將面臨每噸額外重稅；同時歐盟自7/1起實施新版鋼鐵關稅配額制度，全年免稅進口配額較先前大砍47%至1,830萬噸，超額部分課徵50%關稅，兩項政策疊加大幅壓縮亞系（含中、韓、台）鋼廠對歐出口的成本競爭力，部分中國出口商透過調整HS關稅編碼（例如變更鋼管形狀規避分類）規避關稅的做法，亦持續受到歐盟關注。</p>
+        <h4 style="color:var(--accent-blue); margin:16px 0 8px;">🌏 全球供需與區域政策 (Supply/Demand &amp; Regional Policy)</h4>
+        <p style="font-size:0.9rem; line-height:1.7;">本週（7/27~8/3）全球鋼市呈現「東弱西強」格局：中國7月上旬全國粗鋼日均產量較前期回升2.6%，惟全年減產目標（較2025年降2.2%至約9.4億噸）方向不變，反映短期供給仍偏寬鬆，終端需求（房地產、基建）復甦力道不足，亞洲現貨鋼價持續走軟，中鋼、中鴻8月盤價因此同步調降800元/噸；相對地，歐美主要鋼廠受惠於關稅保護與配額限制，ArcelorMittal 2Q26噸鋼毛利達155美元、遠高於歷史平均，Nucor美國熱軋捲板報價維持強勢（月初已調漲至1,135美元/短噸），呈現區域鋼價分化持續擴大的態勢。</p>
+        <h4 style="color:var(--accent-gold); margin:16px 0 8px;">🎯 戰略提示與集團連動 (Strategic Takeaways)</h4>
+        <p style="font-size:0.9rem; line-height:1.7;">對中鋼集團之戰略提示：(1) 歐盟CBAM與新配額制度短期內對中鋼直接出口歐洲影響有限（中鋼主力市場仍以內銷與東南亞為主），但中國鋼品若因歐美設限轉向亞太市場傾銷，恐加劇區域現貨價格競爭壓力，8月盤價調降已提前反映此一疑慮；(2) 中國粗鋼減產政策若後續確實落實，中期有助收斂全球供給過剩、支撐鋼價築底，惟短期（7月上旬）產量仍逆勢回升，落實時點與力道仍待觀察；(3) 建議密切追蹤中國8月各項穩增長政策執行進度、以及歐盟配額執行後對亞系出口實際衝擊幅度，作為研判中鋼下半年盤價與獲利能見度的關鍵驗證訊號。</p>
+    
+            </div>
+        
+            <p style="font-size:0.72rem; color:var(--text-muted); margin-top:10px;">
+                股價為 Yahoo Finance 即時報價（各公司原幣別，未換算台幣）；原物料價格/利差評論、公司新聞、週一戰略專題皆由 AI Agent 人工研究後寫入，非程式碼自動爬蟲抓取。
+            </p>
+        </div>
+    
+
+        <!-- Section 4: Deep Analysis & Global Market Commentary -->
+        <div class="section-card" style="border-left: 4px solid var(--accent-blue);">
+            <div class="section-header" style="color:var(--accent-blue);">
+                <span>📊</span> 全球市場觀盤深度解讀 (Detailed Global Analysis)
+            </div>
+            
+            
+            <div class="analysis-box" style="border-left-color: var(--accent-blue);">
+                <h4 style="color:var(--accent-blue);">1. 從Alphabet資本支出恐慌到Microsoft/Amazon驗證：AI雲端「支出vs.報酬」敘事的月度大逆轉</h4>
+                <p>7/22 Alphabet公布財報，儘管雲端業務年增24%、獲利亦優於預期，市場仍聚焦於管理層將2026年資本支出上修至205億美元，股價一度重挫逾5%；然而僅一週後，7/30-31 Microsoft（Azure成長創近四年最快）與Amazon（AWS營收年增37%）相繼公布財報，同樣是巨額資本支出但營收成長驗證了投資報酬，帶動費半單週勁揚、那斯達克以連4月收紅作收，本次確認Alphabet週五亦收復失土大漲7.12%。這場逆轉的核心機制在於：市場對AI資本支出的定價邏輯正從「燒錢疑慮」轉向「以雲端營收成長率驗證支出效率」，同一敘事在不同公司財報間被重新定價。受影響資產包括美股四大雲端巨頭估值倍數、費半成分股、台積電ADR及台股半導體設備/伺服器供應鏈。後續應觀察8/26 Nvidia財報的下一季出貨展望是否延續此一驗證邏輯，作為判斷這場資本支出信心重建能否持續擴散至台股AI供應鏈的關鍵訊號。</p>
+            </div>
+            <div class="analysis-box" style="border-left-color: var(--accent-purple);">
+                <h4 style="color:var(--accent-purple);">2. 南韓KOSPI史上最深修正後史上最大反彈：槓桿去化機制與台灣記憶體供應鏈的傳導限制</h4>
+                <p>南韓KOSPI自6月22日高點9,114點起，因中國DUV設備量產威脅、SK海力士財報雖創獲利新高股價仍重挫等結構性疑慮，連續觸發史上罕見的連環熔斷，最深跌至7月底約5,500-5,700點（修正幅度逾30%），本次確認7/31單日反彈17.91%、創該指數史上最大單日漲幅，SK海力士、三星電子同步漲停。其機制核心在於：這波暴跌很大程度源於南韓散戶槓桿型ETF的強制平倉螺旋（而非單純基本面惡化），當7/30 Microsoft/Amazon財報驗證AI雲端需求無虞後，最先超跌、槓桿最集中的南韓記憶體股便出現最劇烈的空頭回補式反彈。惟本次確認費半週五僅小漲0.07%、台積電ADR僅+0.23%，顯示這波反彈的動能集中在南韓記憶體股本身，尚未明顯外溢至台灣半導體供應鏈。受影響資產包括南韓記憶體雙雄、台股記憶體模組與被動元件類股、台積電ADR。後續應觀察南韓槓桿部位去化是否已近尾聲、以及台股記憶體概念股本週開盤是否出現同步補漲，作為判斷此反彈廣度能否擴散至台灣供應鏈的驗證訊號。</p>
+            </div>
+            <div class="analysis-box" style="border-left-color: var(--accent-green);">
+                <h4 style="color:var(--accent-green);">3. 殖利率創18年新高與地緣風險升溫下的資產「脫鉤」定價：股市、油價為何未同步反映風險</h4>
+                <p>本週30年期美債殖利率彈升至5.25%、創2007年以來新高，10年期本次確認亦達4.75%，理論上應壓抑成長股估值；同時中東情勢並未緩解——美國正評估對伊朗新一輪軍事行動、科威特週六攔截伊朗無人機攻擊——理論上應推升油價避險溢價。然而本次確認美股在殖利率高檔下仍以連4月收紅作收，原油更重挫4.63%至80.75美元，呈現「利率與股市脫鉤」、「地緣風險與油價脫鉤」的雙重背離。其機制在於：股市定價邏輯目前主要錨定於AI雲端資本支出的營收驗證（見Microsoft/Amazon財報），暫時蓋過殖利率上升對折現率的壓抑；油價則反映市場尚未將「評估中」的軍事行動視為確定性事件，供需基本面（而非地緣風險溢價）仍主導短期定價。受影響資產包括美元指數、美元/台幣匯率、公用事業與REITs等利率敏感類股、能源類股。後續應觀察若美伊軍事行動由「評估」轉為「實際執行」，油價與VIX是否出現同步跳升，以及30年期殖利率若持續站穩5.25%以上，是否開始反噬科技股估值，作為判斷這場資產脫鉤能否延續的關鍵訊號。</p>
+            </div>
+        </div>
+
+        <!-- Section 5: Investor Sentiment (VIX + CNN Fear & Greed) -->
+        
+        <div class="section-card" style="border-left: 4px solid var(--accent-gold);">
+            <div class="section-header" style="color:var(--accent-gold);">
+                <span>🧭</span> 投資人情緒 (Investor Sentiment)
+            </div>
+            <div class="asset-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="asset-card">
+                    <div class="asset-label">😨 CBOE VIX 恐慌指數</div>
+                    <div class="asset-val down">15.99</div>
+                    <div style="font-size:0.8rem; margin-top:4px;"><span class="badge-tag badge-down">-1.10 (-6.44%)</span></div>
+                </div>
+            <div class="asset-card">
+                <div class="asset-label">🧭 CNN 恐懼與貪婪指數</div>
+                <div class="asset-val" style="color:#f97316;">42 <span style="font-size:0.85rem; font-weight:600;">(恐懼)</span></div>
+                <div style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">
+                    前一交易日 39　前一週 41　前一月 30
+                </div>
+            </div>
+            </div>
+            
+            <div style="margin: 16px 0 4px;">
+                <div style="position:relative; height:14px; border-radius:7px; background:linear-gradient(90deg, #ef4444 0%, #f97316 25%, #facc15 50%, #a3e635 75%, #22c55e 100%);">
+                    <div style="position:absolute; top:-4px; left:42%; transform:translateX(-50%); width:2px; height:22px; background:#0f172a; border:1px solid #fff; border-radius:1px;"></div>
+                </div>
+                <div style="display:flex; justify-content:space-between; font-size:0.68rem; color:var(--text-muted); margin-top:4px;">
+                    <span>極度恐懼</span><span>恐懼</span><span>中性</span><span>貪婪</span><span>極度貪婪</span>
+                </div>
+            </div>
+            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">
+                恐懼與貪婪指數配色沿用 CNN 官方慣例（紅色代表恐懼、綠色代表貪婪），與本報告其餘紅漲綠跌之台股慣例相反，方便直接對照 CNN 原始畫面；資料來源為 CNN 非正式公開端點，若當日擷取失敗僅省略此卡片，不影響其餘報告內容。
+            </p>
+
+            <div class="analysis-box" style="border-left-color: var(--accent-gold); margin-top:14px;">
+                <h4 style="color:var(--accent-gold);">市場情緒與輿論觀察</h4>
+                <p>CNN 恐懼與貪婪指數現為 42 分（恐懼），較一週前的 41 分上升，較一個月前的 30 分則上升。與 VIX 走勢同步指向風險偏好回升。 AAII最新一期（截至7/30）散戶情緒調查顯示：多頭比例回升1.4個百分點至31.0%、中立比例降至26.9%、空頭比例降至42.1%，雖較前一週略有改善，惟空頭比例仍處歷史相對高檔，反映散戶信心尚未隨股市反彈同步修復；CBOE股票Put/Call Ratio約0.86（9日均值0.92，位於近期區間82百分位），選擇權市場避險需求仍偏高，作為反向指標偏向謹慎樂觀解讀。VIX本次確認報價大跌6.44%至15.99，恐慌情緒隨美股月底反彈明顯消退。值得留意的是，南韓KOSPI與SK海力士等記憶體股7月從高點修正逾30%後，於7/31出現指數史上最大單日反彈（+17.91%），歷史上恐慌性深跌達此等極端水位後，市場常出現技術性反彈或均值回歸，惟這僅為統計觀察、不宜單憑此逕行判斷後續走勢或作為操作依據。</p>
+            </div>
+
+            <h4 style="color:var(--text-main); margin:20px 0 8px; font-size:1rem;">52週高低位階 (52-Week Range Position)</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr><th>指數</th><th>52週低點</th><th>目前價位</th><th>52週高點</th><th>目前位階</th></tr>
+                    </thead>
+                    <tbody><tr>
+        <td><strong>道瓊工業</strong><br><span style="font-size:0.75rem; color:var(--text-muted);">DJI</span></td>
+        <td>43,724.02</td>
+        <td class="up">52,485.03</td>
+        <td>53,289.30</td>
+        <td><div style="display:flex; align-items:center; gap:8px;">
+            <div style="position:relative; flex:1; min-width:70px; height:10px; border-radius:5px; background:linear-gradient(90deg, var(--down-color) 0%, #facc15 50%, var(--up-color) 100%);">
+                <div style="position:absolute; top:-3px; left:91.6%; transform:translateX(-50%); width:2px; height:16px; background:#0f172a; border:1px solid #fff; border-radius:1px;"></div>
+            </div>
+            <span style="font-size:0.8rem; color:var(--text-muted); white-space:nowrap;">92%</span>
+        </div></td>
+    </tr><tr>
+        <td><strong>標普500</strong><br><span style="font-size:0.75rem; color:var(--text-muted);">SPX</span></td>
+        <td>6,271.71</td>
+        <td class="up">7,489.72</td>
+        <td>7,620.90</td>
+        <td><div style="display:flex; align-items:center; gap:8px;">
+            <div style="position:relative; flex:1; min-width:70px; height:10px; border-radius:5px; background:linear-gradient(90deg, var(--down-color) 0%, #facc15 50%, var(--up-color) 100%);">
+                <div style="position:absolute; top:-3px; left:90.3%; transform:translateX(-50%); width:2px; height:16px; background:#0f172a; border:1px solid #fff; border-radius:1px;"></div>
+            </div>
+            <span style="font-size:0.8rem; color:var(--text-muted); white-space:nowrap;">90%</span>
+        </div></td>
+    </tr><tr>
+        <td><strong>那斯達克</strong><br><span style="font-size:0.75rem; color:var(--text-muted);">IXIC</span></td>
+        <td>20,690.25</td>
+        <td class="up">25,373.85</td>
+        <td>27,190.21</td>
+        <td><div style="display:flex; align-items:center; gap:8px;">
+            <div style="position:relative; flex:1; min-width:70px; height:10px; border-radius:5px; background:linear-gradient(90deg, var(--down-color) 0%, #facc15 50%, var(--up-color) 100%);">
+                <div style="position:absolute; top:-3px; left:72.1%; transform:translateX(-50%); width:2px; height:16px; background:#0f172a; border:1px solid #fff; border-radius:1px;"></div>
+            </div>
+            <span style="font-size:0.8rem; color:var(--text-muted); white-space:nowrap;">72%</span>
+        </div></td>
+    </tr><tr>
+        <td><strong>費城半導體</strong><br><span style="font-size:0.75rem; color:var(--text-muted);">SOX</span></td>
+        <td>5,474.51</td>
+        <td class="up">11,311.08</td>
+        <td>14,655.29</td>
+        <td><div style="display:flex; align-items:center; gap:8px;">
+            <div style="position:relative; flex:1; min-width:70px; height:10px; border-radius:5px; background:linear-gradient(90deg, var(--down-color) 0%, #facc15 50%, var(--up-color) 100%);">
+                <div style="position:absolute; top:-3px; left:63.6%; transform:translateX(-50%); width:2px; height:16px; background:#0f172a; border:1px solid #fff; border-radius:1px;"></div>
+            </div>
+            <span style="font-size:0.8rem; color:var(--text-muted); white-space:nowrap;">64%</span>
+        </div></td>
+    </tr><tr>
+        <td><strong>VIX恐慌指數</strong><br><span style="font-size:0.75rem; color:var(--text-muted);">VIX</span></td>
+        <td>13.38</td>
+        <td class="down">15.99</td>
+        <td>35.30</td>
+        <td><div style="display:flex; align-items:center; gap:8px;">
+            <div style="position:relative; flex:1; min-width:70px; height:10px; border-radius:5px; background:linear-gradient(90deg, var(--down-color) 0%, #facc15 50%, var(--up-color) 100%);">
+                <div style="position:absolute; top:-3px; left:11.9%; transform:translateX(-50%); width:2px; height:16px; background:#0f172a; border:1px solid #fff; border-radius:1px;"></div>
+            </div>
+            <span style="font-size:0.8rem; color:var(--text-muted); white-space:nowrap;">12%</span>
+        </div></td>
+    </tr></tbody>
+                </table>
+            </div>
+            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;">
+                位階 = (目前價位－52週低點) ÷ (52週高點－52週低點)，數值愈高代表愈貼近 52 週高點，儀表條沿用本報告紅漲綠跌配色（僅反映價位相對位置，非漲跌方向判斷）。四大指數平均落在 52 週區間的 79% 位置，尚未明顯貼近年度高點或低點，動能延續與反轉訊號均不明顯，多空尚在拉鋸。 VIX 目前落在自身 52 週區間的 12% 位置——VIX 屬於均值回歸型指標，貼近 52 週高點通常代表恐慌情緒已達極端、後續傾向回落，貼近低點則代表市場過度平靜、波動可能醞釀回升，解讀方向與上述四大指數的動能/反轉效應剛好相反，不可套用同一套邏輯。
+            </p>
+        </div>
+    
+
+        <!-- Section 6: Economic & Financial Uncertainty (EPU + SKEW + VVIX + MOVE) -->
+        
+        <div class="section-card" style="border-left: 4px solid var(--accent-purple);">
+            <div class="section-header" style="color:var(--accent-purple);">
+                <span>📉</span> 經濟與金融不確定性指標 (Economic &amp; Financial Uncertainty)
+            </div>
+            <div class="asset-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="asset-card">
+        <div class="asset-label">經濟政策不確定性指數 <span style="font-size:0.72rem; color:var(--text-muted);">US EPU (Baker, Bloom &amp; Davis)</span></div>
+        <div class="asset-val">244.62</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="down">↓ 較 02/03 -76.98 (-23.9%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_60706" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,64.5 L 11.7,65.6 L 13.4,66.3 L 15.0,73.1 L 16.7,52.5 L 18.4,54.7 L 20.1,70.4 L 21.7,71.4 L 23.4,68.6 L 25.1,57.6 L 26.8,63.6 L 28.4,62.1 L 30.1,63.2 L 31.8,66.9 L 33.5,67.1 L 35.1,69.4 L 36.8,54.3 L 38.5,55.5 L 40.2,59.1 L 41.8,46.5 L 43.5,42.3 L 45.2,43.7 L 46.9,61.7 L 48.5,64.6 L 50.2,64.6 L 51.9,74.7 L 53.6,61.0 L 55.3,57.4 L 56.9,51.3 L 58.6,69.9 L 60.3,60.6 L 62.0,55.9 L 63.6,60.3 L 65.3,38.3 L 67.0,55.1 L 68.7,66.5 L 70.3,58.6 L 72.0,62.0 L 73.7,56.8 L 75.4,57.8 L 77.0,54.7 L 78.7,69.1 L 80.4,64.3 L 82.1,62.9 L 83.7,61.5 L 85.4,65.3 L 87.1,54.4 L 88.8,51.8 L 90.4,62.9 L 92.1,54.2 L 93.8,67.3 L 95.5,53.3 L 97.2,65.7 L 98.8,67.5 L 100.5,55.4 L 102.2,60.9 L 103.9,60.8 L 105.5,62.2 L 107.2,67.6 L 108.9,60.3 L 110.6,66.1 L 112.2,42.2 L 113.9,68.4 L 115.6,69.2 L 117.3,69.0 L 118.9,66.2 L 120.6,67.8 L 122.3,34.8 L 124.0,62.6 L 125.6,60.8 L 127.3,59.1 L 129.0,67.2 L 130.7,68.0 L 132.3,67.8 L 134.0,66.1 L 135.7,61.0 L 137.4,64.0 L 139.1,71.8 L 140.7,71.2 L 142.4,56.5 L 144.1,68.7 L 145.8,50.2 L 147.4,71.6 L 149.1,63.6 L 150.8,60.6 L 152.5,66.8 L 154.1,60.7 L 155.8,53.8 L 157.5,21.3 L 159.2,63.1 L 160.8,61.8 L 162.5,52.2 L 164.2,67.5 L 165.9,64.7 L 167.5,67.8 L 169.2,42.2 L 170.9,52.6 L 172.6,64.5 L 174.2,66.0 L 175.9,69.5 L 177.6,70.7 L 179.3,61.1 L 180.9,60.3 L 182.6,55.7 L 184.3,64.4 L 186.0,59.7 L 187.7,58.4 L 189.3,70.1 L 191.0,65.4 L 192.7,69.9 L 194.4,61.3 L 196.0,64.7 L 197.7,72.4 L 199.4,64.2 L 201.1,67.0 L 202.7,62.8 L 204.4,70.8 L 206.1,60.5 L 207.8,69.6 L 209.4,70.4 L 211.1,56.4 L 212.8,62.0 L 214.5,69.9 L 216.1,62.3 L 217.8,63.5 L 219.5,61.1 L 221.2,67.1 L 222.8,72.5 L 224.5,68.3 L 226.2,70.4 L 227.9,70.1 L 229.6,66.8 L 231.2,61.1 L 232.9,54.4 L 234.6,63.8 L 236.3,58.4 L 237.9,50.4 L 239.6,61.5 L 241.3,53.5 L 243.0,61.5 L 244.6,59.8 L 246.3,56.0 L 248.0,67.3 L 249.7,68.6 L 251.3,66.5 L 253.0,26.9 L 254.7,71.3 L 256.4,63.8 L 258.0,71.2 L 259.7,73.3 L 261.4,73.7 L 263.1,63.9 L 264.7,65.7 L 266.4,69.1 L 268.1,68.4 L 269.8,72.3 L 271.5,66.8 L 273.1,69.9 L 274.8,68.1 L 276.5,64.1 L 278.2,70.2 L 279.8,65.7 L 281.5,66.0 L 283.2,66.7 L 284.9,61.6 L 286.5,54.5 L 288.2,71.8 L 289.9,60.9 L 291.6,61.9 L 293.2,74.5 L 294.9,71.9 L 296.6,40.0 L 298.3,66.2 L 299.9,69.1 L 301.6,64.1 L 303.3,67.6 L 305.0,69.7 L 306.6,63.6 L 308.3,68.1 L 310.0,69.1 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_60706)"/>
+      <path d="M 10.0,64.5 L 11.7,65.6 L 13.4,66.3 L 15.0,73.1 L 16.7,52.5 L 18.4,54.7 L 20.1,70.4 L 21.7,71.4 L 23.4,68.6 L 25.1,57.6 L 26.8,63.6 L 28.4,62.1 L 30.1,63.2 L 31.8,66.9 L 33.5,67.1 L 35.1,69.4 L 36.8,54.3 L 38.5,55.5 L 40.2,59.1 L 41.8,46.5 L 43.5,42.3 L 45.2,43.7 L 46.9,61.7 L 48.5,64.6 L 50.2,64.6 L 51.9,74.7 L 53.6,61.0 L 55.3,57.4 L 56.9,51.3 L 58.6,69.9 L 60.3,60.6 L 62.0,55.9 L 63.6,60.3 L 65.3,38.3 L 67.0,55.1 L 68.7,66.5 L 70.3,58.6 L 72.0,62.0 L 73.7,56.8 L 75.4,57.8 L 77.0,54.7 L 78.7,69.1 L 80.4,64.3 L 82.1,62.9 L 83.7,61.5 L 85.4,65.3 L 87.1,54.4 L 88.8,51.8 L 90.4,62.9 L 92.1,54.2 L 93.8,67.3 L 95.5,53.3 L 97.2,65.7 L 98.8,67.5 L 100.5,55.4 L 102.2,60.9 L 103.9,60.8 L 105.5,62.2 L 107.2,67.6 L 108.9,60.3 L 110.6,66.1 L 112.2,42.2 L 113.9,68.4 L 115.6,69.2 L 117.3,69.0 L 118.9,66.2 L 120.6,67.8 L 122.3,34.8 L 124.0,62.6 L 125.6,60.8 L 127.3,59.1 L 129.0,67.2 L 130.7,68.0 L 132.3,67.8 L 134.0,66.1 L 135.7,61.0 L 137.4,64.0 L 139.1,71.8 L 140.7,71.2 L 142.4,56.5 L 144.1,68.7 L 145.8,50.2 L 147.4,71.6 L 149.1,63.6 L 150.8,60.6 L 152.5,66.8 L 154.1,60.7 L 155.8,53.8 L 157.5,21.3 L 159.2,63.1 L 160.8,61.8 L 162.5,52.2 L 164.2,67.5 L 165.9,64.7 L 167.5,67.8 L 169.2,42.2 L 170.9,52.6 L 172.6,64.5 L 174.2,66.0 L 175.9,69.5 L 177.6,70.7 L 179.3,61.1 L 180.9,60.3 L 182.6,55.7 L 184.3,64.4 L 186.0,59.7 L 187.7,58.4 L 189.3,70.1 L 191.0,65.4 L 192.7,69.9 L 194.4,61.3 L 196.0,64.7 L 197.7,72.4 L 199.4,64.2 L 201.1,67.0 L 202.7,62.8 L 204.4,70.8 L 206.1,60.5 L 207.8,69.6 L 209.4,70.4 L 211.1,56.4 L 212.8,62.0 L 214.5,69.9 L 216.1,62.3 L 217.8,63.5 L 219.5,61.1 L 221.2,67.1 L 222.8,72.5 L 224.5,68.3 L 226.2,70.4 L 227.9,70.1 L 229.6,66.8 L 231.2,61.1 L 232.9,54.4 L 234.6,63.8 L 236.3,58.4 L 237.9,50.4 L 239.6,61.5 L 241.3,53.5 L 243.0,61.5 L 244.6,59.8 L 246.3,56.0 L 248.0,67.3 L 249.7,68.6 L 251.3,66.5 L 253.0,26.9 L 254.7,71.3 L 256.4,63.8 L 258.0,71.2 L 259.7,73.3 L 261.4,73.7 L 263.1,63.9 L 264.7,65.7 L 266.4,69.1 L 268.1,68.4 L 269.8,72.3 L 271.5,66.8 L 273.1,69.9 L 274.8,68.1 L 276.5,64.1 L 278.2,70.2 L 279.8,65.7 L 281.5,66.0 L 283.2,66.7 L 284.9,61.6 L 286.5,54.5 L 288.2,71.8 L 289.9,60.9 L 291.6,61.9 L 293.2,74.5 L 294.9,71.9 L 296.6,40.0 L 298.3,66.2 L 299.9,69.1 L 301.6,64.1 L 303.3,67.6 L 305.0,69.7 L 306.6,63.6 L 308.3,68.1 L 310.0,69.1" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="69.1" r="3.5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">02/03</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">05/04</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">08/01</text>
+    </svg></div>
+    </div><div class="asset-card">
+        <div class="asset-label">CBOE SKEW 指數 <span style="font-size:0.72rem; color:var(--text-muted);">尾端風險 Tail Risk</span></div>
+        <div class="asset-val">141.23</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="down">↓ 較 02/02 -5.33 (-3.6%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_64347" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a855f7" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#a855f7" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,45.1 L 12.4,50.7 L 14.8,52.1 L 17.3,64.6 L 19.7,58.0 L 22.1,47.8 L 24.5,46.8 L 26.9,50.8 L 29.4,53.5 L 31.8,60.0 L 34.2,58.1 L 36.6,60.4 L 39.0,56.2 L 41.5,47.2 L 43.9,55.7 L 46.3,54.7 L 48.7,46.1 L 51.1,45.0 L 53.5,44.8 L 56.0,34.2 L 58.4,32.0 L 60.8,32.0 L 63.2,29.7 L 65.6,34.2 L 68.1,21.3 L 70.5,28.6 L 72.9,32.8 L 75.3,58.8 L 77.7,63.3 L 80.2,55.6 L 82.6,48.2 L 85.0,65.9 L 87.4,62.3 L 89.8,60.5 L 92.3,54.5 L 94.7,53.2 L 97.1,56.9 L 99.5,50.4 L 101.9,60.8 L 104.4,54.1 L 106.8,47.4 L 109.2,50.9 L 111.6,44.2 L 114.0,42.9 L 116.5,41.1 L 118.9,37.2 L 121.3,51.9 L 123.7,50.0 L 126.1,23.5 L 128.5,38.0 L 131.0,60.3 L 133.4,57.2 L 135.8,54.9 L 138.2,54.7 L 140.6,56.8 L 143.1,56.9 L 145.5,59.5 L 147.9,60.6 L 150.3,59.4 L 152.7,62.5 L 155.2,54.8 L 157.6,51.8 L 160.0,55.8 L 162.4,55.1 L 164.8,61.3 L 167.3,68.2 L 169.7,66.8 L 172.1,62.4 L 174.5,58.3 L 176.9,59.9 L 179.4,55.6 L 181.8,60.1 L 184.2,46.7 L 186.6,62.0 L 189.0,68.0 L 191.5,74.7 L 193.9,65.0 L 196.3,64.1 L 198.7,60.7 L 201.1,61.7 L 203.5,59.7 L 206.0,50.0 L 208.4,53.6 L 210.8,52.0 L 213.2,65.2 L 215.6,54.2 L 218.1,33.2 L 220.5,48.3 L 222.9,54.6 L 225.3,52.3 L 227.7,52.5 L 230.2,53.3 L 232.6,49.7 L 235.0,53.2 L 237.4,53.2 L 239.8,44.7 L 242.3,54.8 L 244.7,52.2 L 247.1,47.7 L 249.5,58.9 L 251.9,59.9 L 254.4,49.4 L 256.8,38.7 L 259.2,27.9 L 261.6,37.9 L 264.0,47.5 L 266.5,46.8 L 268.9,38.3 L 271.3,49.0 L 273.7,49.8 L 276.1,46.9 L 278.5,48.0 L 281.0,41.0 L 283.4,46.8 L 285.8,43.6 L 288.2,46.1 L 290.6,34.5 L 293.1,37.5 L 295.5,46.3 L 297.9,43.6 L 300.3,45.0 L 302.7,52.5 L 305.2,59.6 L 307.6,58.9 L 310.0,56.1 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_64347)"/>
+      <path d="M 10.0,45.1 L 12.4,50.7 L 14.8,52.1 L 17.3,64.6 L 19.7,58.0 L 22.1,47.8 L 24.5,46.8 L 26.9,50.8 L 29.4,53.5 L 31.8,60.0 L 34.2,58.1 L 36.6,60.4 L 39.0,56.2 L 41.5,47.2 L 43.9,55.7 L 46.3,54.7 L 48.7,46.1 L 51.1,45.0 L 53.5,44.8 L 56.0,34.2 L 58.4,32.0 L 60.8,32.0 L 63.2,29.7 L 65.6,34.2 L 68.1,21.3 L 70.5,28.6 L 72.9,32.8 L 75.3,58.8 L 77.7,63.3 L 80.2,55.6 L 82.6,48.2 L 85.0,65.9 L 87.4,62.3 L 89.8,60.5 L 92.3,54.5 L 94.7,53.2 L 97.1,56.9 L 99.5,50.4 L 101.9,60.8 L 104.4,54.1 L 106.8,47.4 L 109.2,50.9 L 111.6,44.2 L 114.0,42.9 L 116.5,41.1 L 118.9,37.2 L 121.3,51.9 L 123.7,50.0 L 126.1,23.5 L 128.5,38.0 L 131.0,60.3 L 133.4,57.2 L 135.8,54.9 L 138.2,54.7 L 140.6,56.8 L 143.1,56.9 L 145.5,59.5 L 147.9,60.6 L 150.3,59.4 L 152.7,62.5 L 155.2,54.8 L 157.6,51.8 L 160.0,55.8 L 162.4,55.1 L 164.8,61.3 L 167.3,68.2 L 169.7,66.8 L 172.1,62.4 L 174.5,58.3 L 176.9,59.9 L 179.4,55.6 L 181.8,60.1 L 184.2,46.7 L 186.6,62.0 L 189.0,68.0 L 191.5,74.7 L 193.9,65.0 L 196.3,64.1 L 198.7,60.7 L 201.1,61.7 L 203.5,59.7 L 206.0,50.0 L 208.4,53.6 L 210.8,52.0 L 213.2,65.2 L 215.6,54.2 L 218.1,33.2 L 220.5,48.3 L 222.9,54.6 L 225.3,52.3 L 227.7,52.5 L 230.2,53.3 L 232.6,49.7 L 235.0,53.2 L 237.4,53.2 L 239.8,44.7 L 242.3,54.8 L 244.7,52.2 L 247.1,47.7 L 249.5,58.9 L 251.9,59.9 L 254.4,49.4 L 256.8,38.7 L 259.2,27.9 L 261.6,37.9 L 264.0,47.5 L 266.5,46.8 L 268.9,38.3 L 271.3,49.0 L 273.7,49.8 L 276.1,46.9 L 278.5,48.0 L 281.0,41.0 L 283.4,46.8 L 285.8,43.6 L 288.2,46.1 L 290.6,34.5 L 293.1,37.5 L 295.5,46.3 L 297.9,43.6 L 300.3,45.0 L 302.7,52.5 L 305.2,59.6 L 307.6,58.9 L 310.0,56.1" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="56.1" r="3.5" fill="#a855f7" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">02/02</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">05/01</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">07/31</text>
+    </svg></div>
+    </div><div class="asset-card">
+        <div class="asset-label">CBOE VVIX 指數 <span style="font-size:0.72rem; color:var(--text-muted);">VIX 波動度之波動度</span></div>
+        <div class="asset-val">91.64</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="down">↓ 較 02/02 -7.13 (-7.2%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_64347" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,62.0 L 12.4,57.0 L 14.8,54.8 L 17.3,44.1 L 19.7,59.8 L 22.1,62.1 L 24.5,60.0 L 26.9,58.7 L 29.4,48.8 L 31.8,45.6 L 34.2,53.9 L 36.6,52.3 L 39.0,49.4 L 41.5,52.3 L 43.9,45.5 L 46.3,52.4 L 48.7,56.9 L 51.1,56.7 L 53.5,50.2 L 56.0,47.7 L 58.4,45.1 L 60.8,54.0 L 63.2,45.2 L 65.6,21.3 L 68.1,38.7 L 70.5,36.0 L 72.9,38.8 L 75.3,31.3 L 77.7,30.5 L 80.2,44.4 L 82.6,50.5 L 85.0,34.9 L 87.4,43.1 L 89.8,35.1 L 92.3,38.5 L 94.7,37.2 L 97.1,41.9 L 99.5,36.9 L 101.9,28.4 L 104.4,33.6 L 106.8,45.1 L 109.2,46.3 L 111.6,45.8 L 114.0,47.6 L 116.5,43.9 L 118.9,50.0 L 121.3,55.5 L 123.7,53.7 L 126.1,58.2 L 128.5,65.3 L 131.0,63.1 L 133.4,63.9 L 135.8,65.5 L 138.2,62.6 L 140.6,58.9 L 143.1,62.0 L 145.5,62.2 L 147.9,63.5 L 150.3,66.8 L 152.7,69.5 L 155.2,64.7 L 157.6,66.9 L 160.0,65.5 L 162.4,62.4 L 164.8,65.4 L 167.3,66.9 L 169.7,67.0 L 172.1,63.9 L 174.5,62.7 L 176.9,62.2 L 179.4,62.4 L 181.8,66.4 L 184.2,67.7 L 186.6,69.4 L 189.0,66.0 L 191.5,64.2 L 193.9,68.7 L 196.3,69.4 L 198.7,71.0 L 201.1,72.9 L 203.5,74.4 L 206.0,74.4 L 208.4,69.0 L 210.8,70.0 L 213.2,70.7 L 215.6,74.7 L 218.1,58.8 L 220.5,68.2 L 222.9,64.9 L 225.3,52.8 L 227.7,60.2 L 230.2,66.8 L 232.6,72.9 L 235.0,72.8 L 237.4,66.1 L 239.8,72.1 L 242.3,68.8 L 244.7,61.3 L 247.1,65.1 L 249.5,69.4 L 251.9,71.5 L 254.4,71.8 L 256.8,73.6 L 259.2,71.5 L 261.6,71.7 L 264.0,73.4 L 266.5,72.6 L 268.9,69.2 L 271.3,71.7 L 273.7,73.2 L 276.1,65.4 L 278.5,67.1 L 281.0,68.7 L 283.4,63.4 L 285.8,56.0 L 288.2,58.0 L 290.6,64.3 L 293.1,65.1 L 295.5,58.7 L 297.9,60.1 L 300.3,59.9 L 302.7,62.2 L 305.2,51.5 L 307.6,66.0 L 310.0,68.9 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_64347)"/>
+      <path d="M 10.0,62.0 L 12.4,57.0 L 14.8,54.8 L 17.3,44.1 L 19.7,59.8 L 22.1,62.1 L 24.5,60.0 L 26.9,58.7 L 29.4,48.8 L 31.8,45.6 L 34.2,53.9 L 36.6,52.3 L 39.0,49.4 L 41.5,52.3 L 43.9,45.5 L 46.3,52.4 L 48.7,56.9 L 51.1,56.7 L 53.5,50.2 L 56.0,47.7 L 58.4,45.1 L 60.8,54.0 L 63.2,45.2 L 65.6,21.3 L 68.1,38.7 L 70.5,36.0 L 72.9,38.8 L 75.3,31.3 L 77.7,30.5 L 80.2,44.4 L 82.6,50.5 L 85.0,34.9 L 87.4,43.1 L 89.8,35.1 L 92.3,38.5 L 94.7,37.2 L 97.1,41.9 L 99.5,36.9 L 101.9,28.4 L 104.4,33.6 L 106.8,45.1 L 109.2,46.3 L 111.6,45.8 L 114.0,47.6 L 116.5,43.9 L 118.9,50.0 L 121.3,55.5 L 123.7,53.7 L 126.1,58.2 L 128.5,65.3 L 131.0,63.1 L 133.4,63.9 L 135.8,65.5 L 138.2,62.6 L 140.6,58.9 L 143.1,62.0 L 145.5,62.2 L 147.9,63.5 L 150.3,66.8 L 152.7,69.5 L 155.2,64.7 L 157.6,66.9 L 160.0,65.5 L 162.4,62.4 L 164.8,65.4 L 167.3,66.9 L 169.7,67.0 L 172.1,63.9 L 174.5,62.7 L 176.9,62.2 L 179.4,62.4 L 181.8,66.4 L 184.2,67.7 L 186.6,69.4 L 189.0,66.0 L 191.5,64.2 L 193.9,68.7 L 196.3,69.4 L 198.7,71.0 L 201.1,72.9 L 203.5,74.4 L 206.0,74.4 L 208.4,69.0 L 210.8,70.0 L 213.2,70.7 L 215.6,74.7 L 218.1,58.8 L 220.5,68.2 L 222.9,64.9 L 225.3,52.8 L 227.7,60.2 L 230.2,66.8 L 232.6,72.9 L 235.0,72.8 L 237.4,66.1 L 239.8,72.1 L 242.3,68.8 L 244.7,61.3 L 247.1,65.1 L 249.5,69.4 L 251.9,71.5 L 254.4,71.8 L 256.8,73.6 L 259.2,71.5 L 261.6,71.7 L 264.0,73.4 L 266.5,72.6 L 268.9,69.2 L 271.3,71.7 L 273.7,73.2 L 276.1,65.4 L 278.5,67.1 L 281.0,68.7 L 283.4,63.4 L 285.8,56.0 L 288.2,58.0 L 290.6,64.3 L 293.1,65.1 L 295.5,58.7 L 297.9,60.1 L 300.3,59.9 L 302.7,62.2 L 305.2,51.5 L 307.6,66.0 L 310.0,68.9" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="68.9" r="3.5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">02/02</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">05/01</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">07/31</text>
+    </svg></div>
+    </div><div class="asset-card">
+        <div class="asset-label">ICE BofA MOVE 指數 <span style="font-size:0.72rem; color:var(--text-muted);">美債市場波動度</span></div>
+        <div class="asset-val">70.88</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="up">↑ 較 02/02 +11.58 (+19.5%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_51264" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f472b6" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#f472b6" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,73.0 L 12.6,74.6 L 15.3,74.7 L 17.9,70.4 L 20.5,69.0 L 23.2,69.8 L 25.8,68.1 L 28.4,71.1 L 31.1,64.4 L 33.7,63.0 L 36.3,64.2 L 38.9,68.5 L 41.6,64.9 L 44.2,68.4 L 46.8,64.9 L 49.5,67.5 L 52.1,70.1 L 54.7,68.7 L 57.4,59.9 L 60.0,60.1 L 62.6,55.9 L 65.3,63.1 L 67.9,58.9 L 70.5,52.6 L 73.2,54.1 L 75.8,57.2 L 78.4,55.1 L 81.1,39.6 L 83.7,43.5 L 86.3,48.9 L 88.9,54.5 L 91.6,52.7 L 94.2,49.3 L 96.8,27.1 L 99.5,37.0 L 102.1,32.5 L 104.7,37.5 L 107.4,21.3 L 110.0,24.2 L 112.6,27.5 L 115.3,38.9 L 117.9,44.4 L 120.5,49.7 L 123.2,52.3 L 125.8,50.9 L 128.4,55.0 L 131.1,59.4 L 133.7,61.1 L 136.3,59.0 L 138.9,59.0 L 141.6,65.0 L 144.2,66.9 L 146.8,67.1 L 149.5,65.0 L 152.1,62.4 L 154.7,63.2 L 157.4,65.2 L 160.0,65.9 L 162.6,64.5 L 165.3,64.3 L 167.9,59.1 L 170.5,61.2 L 173.2,62.7 L 175.8,55.8 L 178.4,56.8 L 181.1,62.5 L 183.7,61.0 L 186.3,65.6 L 188.9,62.4 L 191.6,61.5 L 194.2,62.9 L 196.8,63.4 L 199.5,53.9 L 202.1,48.2 L 204.7,48.9 L 207.4,52.4 L 210.0,54.1 L 212.6,55.3 L 215.3,58.5 L 217.9,62.2 L 220.5,63.3 L 223.2,62.9 L 225.8,60.0 L 228.4,59.9 L 231.1,59.8 L 233.7,62.0 L 236.3,58.3 L 238.9,56.6 L 241.6,56.6 L 244.2,59.4 L 246.8,63.6 L 249.5,63.7 L 252.1,63.7 L 254.7,65.6 L 257.4,62.5 L 260.0,67.4 L 262.6,63.1 L 265.3,64.2 L 267.9,64.0 L 270.5,65.8 L 273.2,66.1 L 275.8,64.8 L 278.4,61.3 L 281.1,64.4 L 283.7,67.3 L 286.3,67.0 L 288.9,62.9 L 291.6,60.8 L 294.2,64.1 L 296.8,63.5 L 299.5,55.9 L 302.1,58.4 L 304.7,64.5 L 307.4,64.8 L 310.0,62.3 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_51264)"/>
+      <path d="M 10.0,73.0 L 12.6,74.6 L 15.3,74.7 L 17.9,70.4 L 20.5,69.0 L 23.2,69.8 L 25.8,68.1 L 28.4,71.1 L 31.1,64.4 L 33.7,63.0 L 36.3,64.2 L 38.9,68.5 L 41.6,64.9 L 44.2,68.4 L 46.8,64.9 L 49.5,67.5 L 52.1,70.1 L 54.7,68.7 L 57.4,59.9 L 60.0,60.1 L 62.6,55.9 L 65.3,63.1 L 67.9,58.9 L 70.5,52.6 L 73.2,54.1 L 75.8,57.2 L 78.4,55.1 L 81.1,39.6 L 83.7,43.5 L 86.3,48.9 L 88.9,54.5 L 91.6,52.7 L 94.2,49.3 L 96.8,27.1 L 99.5,37.0 L 102.1,32.5 L 104.7,37.5 L 107.4,21.3 L 110.0,24.2 L 112.6,27.5 L 115.3,38.9 L 117.9,44.4 L 120.5,49.7 L 123.2,52.3 L 125.8,50.9 L 128.4,55.0 L 131.1,59.4 L 133.7,61.1 L 136.3,59.0 L 138.9,59.0 L 141.6,65.0 L 144.2,66.9 L 146.8,67.1 L 149.5,65.0 L 152.1,62.4 L 154.7,63.2 L 157.4,65.2 L 160.0,65.9 L 162.6,64.5 L 165.3,64.3 L 167.9,59.1 L 170.5,61.2 L 173.2,62.7 L 175.8,55.8 L 178.4,56.8 L 181.1,62.5 L 183.7,61.0 L 186.3,65.6 L 188.9,62.4 L 191.6,61.5 L 194.2,62.9 L 196.8,63.4 L 199.5,53.9 L 202.1,48.2 L 204.7,48.9 L 207.4,52.4 L 210.0,54.1 L 212.6,55.3 L 215.3,58.5 L 217.9,62.2 L 220.5,63.3 L 223.2,62.9 L 225.8,60.0 L 228.4,59.9 L 231.1,59.8 L 233.7,62.0 L 236.3,58.3 L 238.9,56.6 L 241.6,56.6 L 244.2,59.4 L 246.8,63.6 L 249.5,63.7 L 252.1,63.7 L 254.7,65.6 L 257.4,62.5 L 260.0,67.4 L 262.6,63.1 L 265.3,64.2 L 267.9,64.0 L 270.5,65.8 L 273.2,66.1 L 275.8,64.8 L 278.4,61.3 L 281.1,64.4 L 283.7,67.3 L 286.3,67.0 L 288.9,62.9 L 291.6,60.8 L 294.2,64.1 L 296.8,63.5 L 299.5,55.9 L 302.1,58.4 L 304.7,64.5 L 307.4,64.8 L 310.0,62.3" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="62.3" r="3.5" fill="#f472b6" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">02/02</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">04/24</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">07/17</text>
+    </svg></div>
+    </div>
+            </div>
+            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:10px;">
+                美國經濟政策不確定性指數(EPU)最新為 245、CBOE SKEW 尾端風險指數為 141.2、VVIX 為 91.6、美債 MOVE 指數為 70.9，皆屬市場對未來不確定性的量化定價，數值愈高代表市場預期波動/政策風險愈大，可與 VIX、恐懼貪婪指數交叉對照解讀。EPU 資料來源為 policyuncertainty.com（Baker, Bloom &amp; Davis 學術團隊公開每日資料）；SKEW/VVIX/MOVE 皆為 CBOE/ICE 官方指數，經 Yahoo Finance 取得每日收盤。以上四項皆為 best-effort 擷取，任一項失敗僅省略該卡片，不影響報告其餘內容。
+            </p>
+            <div class="analysis-box" style="border-left-color: var(--accent-purple); margin-top:14px;">
+                <h4 style="color:var(--accent-purple);">不確定性觀察</h4>
+                <p>本次確認EPU經濟政策不確定性指數244.62、SKEW尾端風險指數141.23、VVIX 91.64、MOVE美債波動度指數70.88，較上週高檔已見緩解惟仍處相對偏高水位，主要驅動因素有三：(1) Fed 7/29決議維持利率不變但三位官員主張升息，鷹派基調延續「higher for longer」疑慮，推升30年期公債殖利率至2007年來新高5.25%；(2) 中東情勢仍未解除——美國正評估對伊朗新一輪軍事行動，沙烏地王儲籲川普勿再升級，科威特週六並攔截伊朗無人機攻擊，惟油價本身走弱顯示市場尚未將立即衝突全面計入風險溢價；(3) AI資本支出「支出與報酬」敘事持續牽動波動度——Alphabet 7/22上修2026年資本支出至205億美元一度觸發股價重挫，直到Microsoft、Amazon財報驗證雲端需求後市場情緒才逐步回穩，8/26 Nvidia財報將是下一個驗證關卡。</p>
+            </div>
+        </div>
+    
+
+        <!-- Section 6.5: Credit Market Spreads (IG + HY OAS via FRED) -->
+        
+        <div class="section-card" style="border-left: 4px solid var(--accent-green);">
+            <div class="section-header" style="color:var(--accent-green);">
+                <span>🏦</span> 信用市場利差 (Credit Market Spreads)
+            </div>
+            <div class="asset-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="asset-card">
+        <div class="asset-label">美國投資等級公司債利差 <span style="font-size:0.72rem; color:var(--text-muted);">ICE BofA US Corporate OAS (%)</span></div>
+        <div class="asset-val">0.80</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="down">↓ 較 11/25 -0.04 (-4.8%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_19542" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,46.7 L 11.7,51.8 L 13.4,51.8 L 15.0,51.8 L 16.7,51.8 L 18.4,51.8 L 20.1,54.3 L 21.7,54.3 L 23.4,56.9 L 25.1,59.4 L 26.8,62.0 L 28.4,59.4 L 30.1,62.0 L 31.8,62.0 L 33.5,56.9 L 35.1,56.9 L 36.8,54.3 L 38.5,54.3 L 40.2,54.3 L 41.8,56.9 L 43.5,56.9 L 45.2,59.4 L 46.9,59.4 L 48.5,59.4 L 50.2,59.4 L 51.9,59.4 L 53.6,59.4 L 55.3,59.4 L 56.9,59.4 L 58.6,59.4 L 60.3,59.4 L 62.0,59.4 L 63.6,62.0 L 65.3,62.0 L 67.0,64.5 L 68.7,64.5 L 70.3,67.0 L 72.0,69.6 L 73.7,69.6 L 75.4,69.6 L 77.0,72.1 L 78.7,74.7 L 80.4,74.7 L 82.1,72.1 L 83.7,74.7 L 85.4,74.7 L 87.1,72.1 L 88.8,72.1 L 90.4,69.6 L 92.1,72.1 L 93.8,72.1 L 95.5,69.6 L 97.2,67.0 L 98.8,67.0 L 100.5,67.0 L 102.2,64.5 L 103.9,64.5 L 105.5,62.0 L 107.2,59.4 L 108.9,59.4 L 110.6,56.9 L 112.2,62.0 L 113.9,59.4 L 115.6,62.0 L 117.3,56.9 L 118.9,54.3 L 120.6,56.9 L 122.3,51.8 L 124.0,44.2 L 125.6,41.7 L 127.3,44.2 L 129.0,46.7 L 130.7,51.8 L 132.3,51.8 L 134.0,46.7 L 135.7,44.2 L 137.4,46.7 L 139.1,36.6 L 140.7,29.0 L 142.4,23.9 L 144.1,21.3 L 145.8,26.4 L 147.4,29.0 L 149.1,31.5 L 150.8,36.6 L 152.5,36.6 L 154.1,39.1 L 155.8,39.1 L 157.5,36.6 L 159.2,29.0 L 160.8,23.9 L 162.5,31.5 L 164.2,39.1 L 165.9,41.7 L 167.5,41.7 L 169.2,44.2 L 170.9,41.7 L 172.6,49.3 L 174.2,49.3 L 175.9,51.8 L 177.6,51.8 L 179.3,54.3 L 180.9,56.9 L 182.6,54.3 L 184.3,56.9 L 186.0,54.3 L 187.7,56.9 L 189.3,59.4 L 191.0,56.9 L 192.7,56.9 L 194.4,54.3 L 196.0,54.3 L 197.7,54.3 L 199.4,54.3 L 201.1,54.3 L 202.7,56.9 L 204.4,59.4 L 206.1,62.0 L 207.8,59.4 L 209.4,59.4 L 211.1,62.0 L 212.8,64.5 L 214.5,67.0 L 216.1,67.0 L 217.8,69.6 L 219.5,69.6 L 221.2,67.0 L 222.8,69.6 L 224.5,69.6 L 226.2,72.1 L 227.9,72.1 L 229.6,72.1 L 231.2,72.1 L 232.9,74.7 L 234.6,74.7 L 236.3,72.1 L 237.9,74.7 L 239.6,72.1 L 241.3,72.1 L 243.0,72.1 L 244.6,72.1 L 246.3,69.6 L 248.0,69.6 L 249.7,69.6 L 251.3,69.6 L 253.0,72.1 L 254.7,74.7 L 256.4,69.6 L 258.0,72.1 L 259.7,72.1 L 261.4,72.1 L 263.1,72.1 L 264.7,72.1 L 266.4,69.6 L 268.1,67.0 L 269.8,64.5 L 271.5,67.0 L 273.1,67.0 L 274.8,67.0 L 276.5,69.6 L 278.2,69.6 L 279.8,69.6 L 281.5,67.0 L 283.2,67.0 L 284.9,67.0 L 286.5,64.5 L 288.2,62.0 L 289.9,59.4 L 291.6,59.4 L 293.2,62.0 L 294.9,59.4 L 296.6,62.0 L 298.3,62.0 L 299.9,62.0 L 301.6,59.4 L 303.3,56.9 L 305.0,54.3 L 306.6,54.3 L 308.3,54.3 L 310.0,56.9 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_19542)"/>
+      <path d="M 10.0,46.7 L 11.7,51.8 L 13.4,51.8 L 15.0,51.8 L 16.7,51.8 L 18.4,51.8 L 20.1,54.3 L 21.7,54.3 L 23.4,56.9 L 25.1,59.4 L 26.8,62.0 L 28.4,59.4 L 30.1,62.0 L 31.8,62.0 L 33.5,56.9 L 35.1,56.9 L 36.8,54.3 L 38.5,54.3 L 40.2,54.3 L 41.8,56.9 L 43.5,56.9 L 45.2,59.4 L 46.9,59.4 L 48.5,59.4 L 50.2,59.4 L 51.9,59.4 L 53.6,59.4 L 55.3,59.4 L 56.9,59.4 L 58.6,59.4 L 60.3,59.4 L 62.0,59.4 L 63.6,62.0 L 65.3,62.0 L 67.0,64.5 L 68.7,64.5 L 70.3,67.0 L 72.0,69.6 L 73.7,69.6 L 75.4,69.6 L 77.0,72.1 L 78.7,74.7 L 80.4,74.7 L 82.1,72.1 L 83.7,74.7 L 85.4,74.7 L 87.1,72.1 L 88.8,72.1 L 90.4,69.6 L 92.1,72.1 L 93.8,72.1 L 95.5,69.6 L 97.2,67.0 L 98.8,67.0 L 100.5,67.0 L 102.2,64.5 L 103.9,64.5 L 105.5,62.0 L 107.2,59.4 L 108.9,59.4 L 110.6,56.9 L 112.2,62.0 L 113.9,59.4 L 115.6,62.0 L 117.3,56.9 L 118.9,54.3 L 120.6,56.9 L 122.3,51.8 L 124.0,44.2 L 125.6,41.7 L 127.3,44.2 L 129.0,46.7 L 130.7,51.8 L 132.3,51.8 L 134.0,46.7 L 135.7,44.2 L 137.4,46.7 L 139.1,36.6 L 140.7,29.0 L 142.4,23.9 L 144.1,21.3 L 145.8,26.4 L 147.4,29.0 L 149.1,31.5 L 150.8,36.6 L 152.5,36.6 L 154.1,39.1 L 155.8,39.1 L 157.5,36.6 L 159.2,29.0 L 160.8,23.9 L 162.5,31.5 L 164.2,39.1 L 165.9,41.7 L 167.5,41.7 L 169.2,44.2 L 170.9,41.7 L 172.6,49.3 L 174.2,49.3 L 175.9,51.8 L 177.6,51.8 L 179.3,54.3 L 180.9,56.9 L 182.6,54.3 L 184.3,56.9 L 186.0,54.3 L 187.7,56.9 L 189.3,59.4 L 191.0,56.9 L 192.7,56.9 L 194.4,54.3 L 196.0,54.3 L 197.7,54.3 L 199.4,54.3 L 201.1,54.3 L 202.7,56.9 L 204.4,59.4 L 206.1,62.0 L 207.8,59.4 L 209.4,59.4 L 211.1,62.0 L 212.8,64.5 L 214.5,67.0 L 216.1,67.0 L 217.8,69.6 L 219.5,69.6 L 221.2,67.0 L 222.8,69.6 L 224.5,69.6 L 226.2,72.1 L 227.9,72.1 L 229.6,72.1 L 231.2,72.1 L 232.9,74.7 L 234.6,74.7 L 236.3,72.1 L 237.9,74.7 L 239.6,72.1 L 241.3,72.1 L 243.0,72.1 L 244.6,72.1 L 246.3,69.6 L 248.0,69.6 L 249.7,69.6 L 251.3,69.6 L 253.0,72.1 L 254.7,74.7 L 256.4,69.6 L 258.0,72.1 L 259.7,72.1 L 261.4,72.1 L 263.1,72.1 L 264.7,72.1 L 266.4,69.6 L 268.1,67.0 L 269.8,64.5 L 271.5,67.0 L 273.1,67.0 L 274.8,67.0 L 276.5,69.6 L 278.2,69.6 L 279.8,69.6 L 281.5,67.0 L 283.2,67.0 L 284.9,67.0 L 286.5,64.5 L 288.2,62.0 L 289.9,59.4 L 291.6,59.4 L 293.2,62.0 L 294.9,59.4 L 296.6,62.0 L 298.3,62.0 L 299.9,62.0 L 301.6,59.4 L 303.3,56.9 L 305.0,54.3 L 306.6,54.3 L 308.3,54.3 L 310.0,56.9" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="56.9" r="3.5" fill="#22d3ee" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">11/25</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">03/30</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">07/30</text>
+    </svg></div>
+    </div><div class="asset-card">
+        <div class="asset-label">美國高收益債利差 <span style="font-size:0.72rem; color:var(--text-muted);">ICE BofA US High Yield OAS (%)</span></div>
+        <div class="asset-val">2.84</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="down">↓ 較 11/25 -0.26 (-8.4%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_19542" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#fb7185" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#fb7185" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,44.5 L 11.7,50.9 L 13.4,50.9 L 15.0,54.1 L 16.7,56.0 L 18.4,54.7 L 20.1,56.0 L 21.7,58.0 L 23.4,58.6 L 25.1,60.5 L 26.8,58.0 L 28.4,58.0 L 30.1,56.7 L 31.8,58.6 L 33.5,56.7 L 35.1,56.7 L 36.8,52.2 L 38.5,51.5 L 40.2,54.1 L 41.8,57.3 L 43.5,58.6 L 45.2,61.8 L 46.9,61.2 L 48.5,59.9 L 50.2,59.2 L 51.9,61.2 L 53.6,63.1 L 55.3,61.8 L 56.9,63.1 L 58.6,64.4 L 60.3,64.4 L 62.0,66.3 L 63.6,67.6 L 65.3,67.6 L 67.0,67.0 L 68.7,66.3 L 70.3,69.5 L 72.0,73.4 L 73.7,73.4 L 75.4,68.2 L 77.0,70.8 L 78.7,74.0 L 80.4,71.5 L 82.1,70.8 L 83.7,69.5 L 85.4,68.9 L 87.1,65.7 L 88.8,63.7 L 90.4,58.6 L 92.1,63.1 L 93.8,60.5 L 95.5,59.9 L 97.2,52.8 L 98.8,59.2 L 100.5,61.2 L 102.2,59.9 L 103.9,61.2 L 105.5,56.0 L 107.2,54.1 L 108.9,54.7 L 110.6,54.7 L 112.2,59.9 L 113.9,58.6 L 115.6,59.9 L 117.3,54.1 L 118.9,52.8 L 120.6,54.7 L 122.3,52.2 L 124.0,44.5 L 125.6,43.2 L 127.3,49.0 L 129.0,45.8 L 130.7,52.8 L 132.3,50.9 L 134.0,42.5 L 135.7,38.7 L 137.4,47.0 L 139.1,45.1 L 140.7,40.0 L 142.4,32.9 L 144.1,33.5 L 145.8,36.8 L 147.4,38.0 L 149.1,33.5 L 150.8,35.5 L 152.5,38.7 L 154.1,38.7 L 155.8,40.0 L 157.5,37.4 L 159.2,23.9 L 160.8,21.3 L 162.5,32.9 L 164.2,40.6 L 165.9,40.0 L 167.5,42.5 L 169.2,47.7 L 170.9,43.2 L 172.6,54.7 L 174.2,57.3 L 175.9,54.7 L 177.6,54.1 L 179.3,61.2 L 180.9,60.5 L 182.6,59.9 L 184.3,61.8 L 186.0,59.2 L 187.7,60.5 L 189.3,61.2 L 191.0,59.9 L 192.7,59.9 L 194.4,61.2 L 196.0,60.5 L 197.7,62.5 L 199.4,61.8 L 201.1,65.7 L 202.7,65.0 L 204.4,65.7 L 206.1,67.0 L 207.8,64.4 L 209.4,63.1 L 211.1,64.4 L 212.8,62.5 L 214.5,62.5 L 216.1,66.3 L 217.8,63.7 L 219.5,61.8 L 221.2,59.9 L 222.8,63.7 L 224.5,65.0 L 226.2,67.6 L 227.9,67.6 L 229.6,68.9 L 231.2,69.5 L 232.9,68.9 L 234.6,68.9 L 236.3,67.6 L 237.9,68.9 L 239.6,69.5 L 241.3,67.0 L 243.0,67.6 L 244.6,66.3 L 246.3,67.0 L 248.0,65.0 L 249.7,63.7 L 251.3,65.0 L 253.0,69.5 L 254.7,72.7 L 256.4,69.5 L 258.0,74.7 L 259.7,72.7 L 261.4,72.7 L 263.1,73.4 L 264.7,69.5 L 266.4,66.3 L 268.1,65.0 L 269.8,61.8 L 271.5,63.7 L 273.1,67.0 L 274.8,67.6 L 276.5,67.0 L 278.2,67.6 L 279.8,68.9 L 281.5,72.1 L 283.2,70.2 L 284.9,70.2 L 286.5,70.8 L 288.2,70.8 L 289.9,68.9 L 291.6,69.5 L 293.2,69.5 L 294.9,68.2 L 296.6,70.8 L 298.3,70.8 L 299.9,71.5 L 301.6,65.7 L 303.3,64.4 L 305.0,63.1 L 306.6,61.2 L 308.3,59.2 L 310.0,61.2 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_19542)"/>
+      <path d="M 10.0,44.5 L 11.7,50.9 L 13.4,50.9 L 15.0,54.1 L 16.7,56.0 L 18.4,54.7 L 20.1,56.0 L 21.7,58.0 L 23.4,58.6 L 25.1,60.5 L 26.8,58.0 L 28.4,58.0 L 30.1,56.7 L 31.8,58.6 L 33.5,56.7 L 35.1,56.7 L 36.8,52.2 L 38.5,51.5 L 40.2,54.1 L 41.8,57.3 L 43.5,58.6 L 45.2,61.8 L 46.9,61.2 L 48.5,59.9 L 50.2,59.2 L 51.9,61.2 L 53.6,63.1 L 55.3,61.8 L 56.9,63.1 L 58.6,64.4 L 60.3,64.4 L 62.0,66.3 L 63.6,67.6 L 65.3,67.6 L 67.0,67.0 L 68.7,66.3 L 70.3,69.5 L 72.0,73.4 L 73.7,73.4 L 75.4,68.2 L 77.0,70.8 L 78.7,74.0 L 80.4,71.5 L 82.1,70.8 L 83.7,69.5 L 85.4,68.9 L 87.1,65.7 L 88.8,63.7 L 90.4,58.6 L 92.1,63.1 L 93.8,60.5 L 95.5,59.9 L 97.2,52.8 L 98.8,59.2 L 100.5,61.2 L 102.2,59.9 L 103.9,61.2 L 105.5,56.0 L 107.2,54.1 L 108.9,54.7 L 110.6,54.7 L 112.2,59.9 L 113.9,58.6 L 115.6,59.9 L 117.3,54.1 L 118.9,52.8 L 120.6,54.7 L 122.3,52.2 L 124.0,44.5 L 125.6,43.2 L 127.3,49.0 L 129.0,45.8 L 130.7,52.8 L 132.3,50.9 L 134.0,42.5 L 135.7,38.7 L 137.4,47.0 L 139.1,45.1 L 140.7,40.0 L 142.4,32.9 L 144.1,33.5 L 145.8,36.8 L 147.4,38.0 L 149.1,33.5 L 150.8,35.5 L 152.5,38.7 L 154.1,38.7 L 155.8,40.0 L 157.5,37.4 L 159.2,23.9 L 160.8,21.3 L 162.5,32.9 L 164.2,40.6 L 165.9,40.0 L 167.5,42.5 L 169.2,47.7 L 170.9,43.2 L 172.6,54.7 L 174.2,57.3 L 175.9,54.7 L 177.6,54.1 L 179.3,61.2 L 180.9,60.5 L 182.6,59.9 L 184.3,61.8 L 186.0,59.2 L 187.7,60.5 L 189.3,61.2 L 191.0,59.9 L 192.7,59.9 L 194.4,61.2 L 196.0,60.5 L 197.7,62.5 L 199.4,61.8 L 201.1,65.7 L 202.7,65.0 L 204.4,65.7 L 206.1,67.0 L 207.8,64.4 L 209.4,63.1 L 211.1,64.4 L 212.8,62.5 L 214.5,62.5 L 216.1,66.3 L 217.8,63.7 L 219.5,61.8 L 221.2,59.9 L 222.8,63.7 L 224.5,65.0 L 226.2,67.6 L 227.9,67.6 L 229.6,68.9 L 231.2,69.5 L 232.9,68.9 L 234.6,68.9 L 236.3,67.6 L 237.9,68.9 L 239.6,69.5 L 241.3,67.0 L 243.0,67.6 L 244.6,66.3 L 246.3,67.0 L 248.0,65.0 L 249.7,63.7 L 251.3,65.0 L 253.0,69.5 L 254.7,72.7 L 256.4,69.5 L 258.0,74.7 L 259.7,72.7 L 261.4,72.7 L 263.1,73.4 L 264.7,69.5 L 266.4,66.3 L 268.1,65.0 L 269.8,61.8 L 271.5,63.7 L 273.1,67.0 L 274.8,67.6 L 276.5,67.0 L 278.2,67.6 L 279.8,68.9 L 281.5,72.1 L 283.2,70.2 L 284.9,70.2 L 286.5,70.8 L 288.2,70.8 L 289.9,68.9 L 291.6,69.5 L 293.2,69.5 L 294.9,68.2 L 296.6,70.8 L 298.3,70.8 L 299.9,71.5 L 301.6,65.7 L 303.3,64.4 L 305.0,63.1 L 306.6,61.2 L 308.3,59.2 L 310.0,61.2" fill="none" stroke="#fb7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="61.2" r="3.5" fill="#fb7185" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">11/25</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">03/30</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">07/30</text>
+    </svg></div>
+    </div><div class="asset-card">
+        <div class="asset-label">美國BBB級公司債利差 <span style="font-size:0.72rem; color:var(--text-muted);">ICE BofA BBB US Corporate OAS (%)</span></div>
+        <div class="asset-val">0.99</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="down">↓ 較 11/25 -0.08 (-7.5%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_19542" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a3e635" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#a3e635" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,41.3 L 11.7,45.8 L 13.4,45.8 L 15.0,48.0 L 16.7,45.8 L 18.4,48.0 L 20.1,50.2 L 21.7,50.2 L 23.4,52.4 L 25.1,54.7 L 26.8,56.9 L 28.4,56.9 L 30.1,56.9 L 31.8,56.9 L 33.5,54.7 L 35.1,52.4 L 36.8,50.2 L 38.5,50.2 L 40.2,50.2 L 41.8,52.4 L 43.5,52.4 L 45.2,54.7 L 46.9,56.9 L 48.5,56.9 L 50.2,56.9 L 51.9,54.7 L 53.6,54.7 L 55.3,54.7 L 56.9,54.7 L 58.6,56.9 L 60.3,54.7 L 62.0,54.7 L 63.6,59.1 L 65.3,59.1 L 67.0,61.3 L 68.7,61.3 L 70.3,63.6 L 72.0,65.8 L 73.7,65.8 L 75.4,65.8 L 77.0,68.0 L 78.7,72.4 L 80.4,70.2 L 82.1,70.2 L 83.7,70.2 L 85.4,72.4 L 87.1,70.2 L 88.8,70.2 L 90.4,68.0 L 92.1,72.4 L 93.8,70.2 L 95.5,68.0 L 97.2,65.8 L 98.8,65.8 L 100.5,65.8 L 102.2,61.3 L 103.9,61.3 L 105.5,59.1 L 107.2,56.9 L 108.9,56.9 L 110.6,54.7 L 112.2,59.1 L 113.9,59.1 L 115.6,59.1 L 117.3,54.7 L 118.9,52.4 L 120.6,54.7 L 122.3,50.2 L 124.0,41.3 L 125.6,39.1 L 127.3,43.6 L 129.0,43.6 L 130.7,50.2 L 132.3,48.0 L 134.0,43.6 L 135.7,41.3 L 137.4,43.6 L 139.1,36.9 L 140.7,30.2 L 142.4,23.6 L 144.1,21.3 L 145.8,25.8 L 147.4,28.0 L 149.1,28.0 L 150.8,32.4 L 152.5,32.4 L 154.1,36.9 L 155.8,36.9 L 157.5,32.4 L 159.2,25.8 L 160.8,21.3 L 162.5,28.0 L 164.2,34.7 L 165.9,36.9 L 167.5,36.9 L 169.2,41.3 L 170.9,39.1 L 172.6,45.8 L 174.2,45.8 L 175.9,48.0 L 177.6,48.0 L 179.3,52.4 L 180.9,54.7 L 182.6,54.7 L 184.3,54.7 L 186.0,54.7 L 187.7,56.9 L 189.3,59.1 L 191.0,56.9 L 192.7,56.9 L 194.4,54.7 L 196.0,52.4 L 197.7,54.7 L 199.4,52.4 L 201.1,54.7 L 202.7,54.7 L 204.4,59.1 L 206.1,59.1 L 207.8,59.1 L 209.4,59.1 L 211.1,61.3 L 212.8,63.6 L 214.5,65.8 L 216.1,68.0 L 217.8,70.2 L 219.5,70.2 L 221.2,68.0 L 222.8,68.0 L 224.5,70.2 L 226.2,72.4 L 227.9,72.4 L 229.6,72.4 L 231.2,72.4 L 232.9,72.4 L 234.6,74.7 L 236.3,72.4 L 237.9,74.7 L 239.6,74.7 L 241.3,72.4 L 243.0,72.4 L 244.6,72.4 L 246.3,72.4 L 248.0,72.4 L 249.7,70.2 L 251.3,70.2 L 253.0,72.4 L 254.7,74.7 L 256.4,72.4 L 258.0,74.7 L 259.7,72.4 L 261.4,72.4 L 263.1,72.4 L 264.7,72.4 L 266.4,70.2 L 268.1,68.0 L 269.8,65.8 L 271.5,68.0 L 273.1,68.0 L 274.8,70.2 L 276.5,70.2 L 278.2,70.2 L 279.8,70.2 L 281.5,70.2 L 283.2,70.2 L 284.9,70.2 L 286.5,65.8 L 288.2,65.8 L 289.9,63.6 L 291.6,63.6 L 293.2,65.8 L 294.9,63.6 L 296.6,63.6 L 298.3,63.6 L 299.9,65.8 L 301.6,61.3 L 303.3,59.1 L 305.0,56.9 L 306.6,56.9 L 308.3,56.9 L 310.0,59.1 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_19542)"/>
+      <path d="M 10.0,41.3 L 11.7,45.8 L 13.4,45.8 L 15.0,48.0 L 16.7,45.8 L 18.4,48.0 L 20.1,50.2 L 21.7,50.2 L 23.4,52.4 L 25.1,54.7 L 26.8,56.9 L 28.4,56.9 L 30.1,56.9 L 31.8,56.9 L 33.5,54.7 L 35.1,52.4 L 36.8,50.2 L 38.5,50.2 L 40.2,50.2 L 41.8,52.4 L 43.5,52.4 L 45.2,54.7 L 46.9,56.9 L 48.5,56.9 L 50.2,56.9 L 51.9,54.7 L 53.6,54.7 L 55.3,54.7 L 56.9,54.7 L 58.6,56.9 L 60.3,54.7 L 62.0,54.7 L 63.6,59.1 L 65.3,59.1 L 67.0,61.3 L 68.7,61.3 L 70.3,63.6 L 72.0,65.8 L 73.7,65.8 L 75.4,65.8 L 77.0,68.0 L 78.7,72.4 L 80.4,70.2 L 82.1,70.2 L 83.7,70.2 L 85.4,72.4 L 87.1,70.2 L 88.8,70.2 L 90.4,68.0 L 92.1,72.4 L 93.8,70.2 L 95.5,68.0 L 97.2,65.8 L 98.8,65.8 L 100.5,65.8 L 102.2,61.3 L 103.9,61.3 L 105.5,59.1 L 107.2,56.9 L 108.9,56.9 L 110.6,54.7 L 112.2,59.1 L 113.9,59.1 L 115.6,59.1 L 117.3,54.7 L 118.9,52.4 L 120.6,54.7 L 122.3,50.2 L 124.0,41.3 L 125.6,39.1 L 127.3,43.6 L 129.0,43.6 L 130.7,50.2 L 132.3,48.0 L 134.0,43.6 L 135.7,41.3 L 137.4,43.6 L 139.1,36.9 L 140.7,30.2 L 142.4,23.6 L 144.1,21.3 L 145.8,25.8 L 147.4,28.0 L 149.1,28.0 L 150.8,32.4 L 152.5,32.4 L 154.1,36.9 L 155.8,36.9 L 157.5,32.4 L 159.2,25.8 L 160.8,21.3 L 162.5,28.0 L 164.2,34.7 L 165.9,36.9 L 167.5,36.9 L 169.2,41.3 L 170.9,39.1 L 172.6,45.8 L 174.2,45.8 L 175.9,48.0 L 177.6,48.0 L 179.3,52.4 L 180.9,54.7 L 182.6,54.7 L 184.3,54.7 L 186.0,54.7 L 187.7,56.9 L 189.3,59.1 L 191.0,56.9 L 192.7,56.9 L 194.4,54.7 L 196.0,52.4 L 197.7,54.7 L 199.4,52.4 L 201.1,54.7 L 202.7,54.7 L 204.4,59.1 L 206.1,59.1 L 207.8,59.1 L 209.4,59.1 L 211.1,61.3 L 212.8,63.6 L 214.5,65.8 L 216.1,68.0 L 217.8,70.2 L 219.5,70.2 L 221.2,68.0 L 222.8,68.0 L 224.5,70.2 L 226.2,72.4 L 227.9,72.4 L 229.6,72.4 L 231.2,72.4 L 232.9,72.4 L 234.6,74.7 L 236.3,72.4 L 237.9,74.7 L 239.6,74.7 L 241.3,72.4 L 243.0,72.4 L 244.6,72.4 L 246.3,72.4 L 248.0,72.4 L 249.7,70.2 L 251.3,70.2 L 253.0,72.4 L 254.7,74.7 L 256.4,72.4 L 258.0,74.7 L 259.7,72.4 L 261.4,72.4 L 263.1,72.4 L 264.7,72.4 L 266.4,70.2 L 268.1,68.0 L 269.8,65.8 L 271.5,68.0 L 273.1,68.0 L 274.8,70.2 L 276.5,70.2 L 278.2,70.2 L 279.8,70.2 L 281.5,70.2 L 283.2,70.2 L 284.9,70.2 L 286.5,65.8 L 288.2,65.8 L 289.9,63.6 L 291.6,63.6 L 293.2,65.8 L 294.9,63.6 L 296.6,63.6 L 298.3,63.6 L 299.9,65.8 L 301.6,61.3 L 303.3,59.1 L 305.0,56.9 L 306.6,56.9 L 308.3,56.9 L 310.0,59.1" fill="none" stroke="#a3e635" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="59.1" r="3.5" fill="#a3e635" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">11/25</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">03/30</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">07/30</text>
+    </svg></div>
+    </div><div class="asset-card">
+        <div class="asset-label">美國CCC及以下利差 <span style="font-size:0.72rem; color:var(--text-muted);">ICE BofA CCC &amp; Lower US HY OAS (%)</span></div>
+        <div class="asset-val">10.06</div>
+        <div style="font-size:0.78rem; margin-top:2px;" class="up">↑ 較 11/25 +0.90 (+9.8%)</div>
+        <div class="chart-container" style="margin-top:8px;"><svg viewBox="0 0 320 100" width="100%" height="100" style="overflow:visible; font-family:sans-serif;">
+      <defs>
+        <linearGradient id="grad_ts_19542" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f87171" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#f87171" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="100" fill="rgba(15,23,42,0.5)" rx="8" stroke="rgba(255,255,255,0.05)"/>
+      <path d="M 10.0,51.8 L 11.7,52.4 L 13.4,52.4 L 15.0,51.5 L 16.7,58.3 L 18.4,57.4 L 20.1,57.4 L 21.7,62.7 L 23.4,62.9 L 25.1,65.9 L 26.8,65.0 L 28.4,63.5 L 30.1,61.5 L 31.8,63.2 L 33.5,63.5 L 35.1,62.7 L 36.8,60.3 L 38.5,58.8 L 40.2,59.1 L 41.8,61.2 L 43.5,62.4 L 45.2,64.4 L 46.9,63.8 L 48.5,62.4 L 50.2,62.9 L 51.9,64.4 L 53.6,60.9 L 55.3,60.0 L 56.9,61.5 L 58.6,64.1 L 60.3,65.3 L 62.0,65.9 L 63.6,66.8 L 65.3,67.0 L 67.0,67.0 L 68.7,67.3 L 70.3,69.4 L 72.0,70.6 L 73.7,70.9 L 75.4,67.0 L 77.0,69.7 L 78.7,73.2 L 80.4,71.4 L 82.1,70.6 L 83.7,72.3 L 85.4,74.7 L 87.1,70.0 L 88.8,69.7 L 90.4,64.1 L 92.1,65.9 L 93.8,64.1 L 95.5,62.4 L 97.2,56.5 L 98.8,58.8 L 100.5,60.3 L 102.2,58.8 L 103.9,60.9 L 105.5,57.4 L 107.2,54.7 L 108.9,57.7 L 110.6,56.5 L 112.2,60.3 L 113.9,60.0 L 115.6,60.3 L 117.3,55.3 L 118.9,52.1 L 120.6,51.2 L 122.3,48.6 L 124.0,41.8 L 125.6,41.3 L 127.3,43.3 L 129.0,39.8 L 130.7,44.2 L 132.3,43.6 L 134.0,39.2 L 135.7,36.3 L 137.4,43.3 L 139.1,43.3 L 140.7,38.6 L 142.4,33.6 L 144.1,35.1 L 145.8,38.0 L 147.4,37.7 L 149.1,34.2 L 150.8,33.3 L 152.5,34.5 L 154.1,33.9 L 155.8,34.8 L 157.5,31.9 L 159.2,23.4 L 160.8,21.3 L 162.5,29.0 L 164.2,32.8 L 165.9,30.7 L 167.5,30.4 L 169.2,34.2 L 170.9,32.2 L 172.6,41.0 L 174.2,43.0 L 175.9,40.7 L 177.6,39.5 L 179.3,47.4 L 180.9,49.5 L 182.6,50.3 L 184.3,53.0 L 186.0,52.1 L 187.7,52.7 L 189.3,52.7 L 191.0,52.1 L 192.7,51.2 L 194.4,54.2 L 196.0,53.3 L 197.7,53.9 L 199.4,53.9 L 201.1,55.3 L 202.7,53.6 L 204.4,53.3 L 206.1,54.4 L 207.8,52.1 L 209.4,50.6 L 211.1,47.4 L 212.8,45.7 L 214.5,47.4 L 216.1,50.1 L 217.8,46.2 L 219.5,44.2 L 221.2,42.4 L 222.8,44.8 L 224.5,45.1 L 226.2,45.1 L 227.9,45.1 L 229.6,46.2 L 231.2,45.9 L 232.9,46.2 L 234.6,45.4 L 236.3,44.5 L 237.9,43.0 L 239.6,43.6 L 241.3,42.7 L 243.0,43.0 L 244.6,41.3 L 246.3,42.1 L 248.0,41.6 L 249.7,39.8 L 251.3,40.1 L 253.0,42.4 L 254.7,45.7 L 256.4,43.6 L 258.0,45.1 L 259.7,43.0 L 261.4,42.7 L 263.1,42.7 L 264.7,40.1 L 266.4,37.7 L 268.1,36.6 L 269.8,35.1 L 271.5,36.9 L 273.1,36.0 L 274.8,36.6 L 276.5,35.7 L 278.2,36.3 L 279.8,36.9 L 281.5,37.7 L 283.2,34.5 L 284.9,34.8 L 286.5,36.0 L 288.2,35.4 L 289.9,35.1 L 291.6,36.3 L 293.2,36.0 L 294.9,34.5 L 296.6,33.9 L 298.3,33.6 L 299.9,32.8 L 301.6,29.8 L 303.3,28.4 L 305.0,26.9 L 306.6,25.7 L 308.3,23.4 L 310.0,25.4 L 310.0,84 L 10.0,84 Z" fill="url(#grad_ts_19542)"/>
+      <path d="M 10.0,51.8 L 11.7,52.4 L 13.4,52.4 L 15.0,51.5 L 16.7,58.3 L 18.4,57.4 L 20.1,57.4 L 21.7,62.7 L 23.4,62.9 L 25.1,65.9 L 26.8,65.0 L 28.4,63.5 L 30.1,61.5 L 31.8,63.2 L 33.5,63.5 L 35.1,62.7 L 36.8,60.3 L 38.5,58.8 L 40.2,59.1 L 41.8,61.2 L 43.5,62.4 L 45.2,64.4 L 46.9,63.8 L 48.5,62.4 L 50.2,62.9 L 51.9,64.4 L 53.6,60.9 L 55.3,60.0 L 56.9,61.5 L 58.6,64.1 L 60.3,65.3 L 62.0,65.9 L 63.6,66.8 L 65.3,67.0 L 67.0,67.0 L 68.7,67.3 L 70.3,69.4 L 72.0,70.6 L 73.7,70.9 L 75.4,67.0 L 77.0,69.7 L 78.7,73.2 L 80.4,71.4 L 82.1,70.6 L 83.7,72.3 L 85.4,74.7 L 87.1,70.0 L 88.8,69.7 L 90.4,64.1 L 92.1,65.9 L 93.8,64.1 L 95.5,62.4 L 97.2,56.5 L 98.8,58.8 L 100.5,60.3 L 102.2,58.8 L 103.9,60.9 L 105.5,57.4 L 107.2,54.7 L 108.9,57.7 L 110.6,56.5 L 112.2,60.3 L 113.9,60.0 L 115.6,60.3 L 117.3,55.3 L 118.9,52.1 L 120.6,51.2 L 122.3,48.6 L 124.0,41.8 L 125.6,41.3 L 127.3,43.3 L 129.0,39.8 L 130.7,44.2 L 132.3,43.6 L 134.0,39.2 L 135.7,36.3 L 137.4,43.3 L 139.1,43.3 L 140.7,38.6 L 142.4,33.6 L 144.1,35.1 L 145.8,38.0 L 147.4,37.7 L 149.1,34.2 L 150.8,33.3 L 152.5,34.5 L 154.1,33.9 L 155.8,34.8 L 157.5,31.9 L 159.2,23.4 L 160.8,21.3 L 162.5,29.0 L 164.2,32.8 L 165.9,30.7 L 167.5,30.4 L 169.2,34.2 L 170.9,32.2 L 172.6,41.0 L 174.2,43.0 L 175.9,40.7 L 177.6,39.5 L 179.3,47.4 L 180.9,49.5 L 182.6,50.3 L 184.3,53.0 L 186.0,52.1 L 187.7,52.7 L 189.3,52.7 L 191.0,52.1 L 192.7,51.2 L 194.4,54.2 L 196.0,53.3 L 197.7,53.9 L 199.4,53.9 L 201.1,55.3 L 202.7,53.6 L 204.4,53.3 L 206.1,54.4 L 207.8,52.1 L 209.4,50.6 L 211.1,47.4 L 212.8,45.7 L 214.5,47.4 L 216.1,50.1 L 217.8,46.2 L 219.5,44.2 L 221.2,42.4 L 222.8,44.8 L 224.5,45.1 L 226.2,45.1 L 227.9,45.1 L 229.6,46.2 L 231.2,45.9 L 232.9,46.2 L 234.6,45.4 L 236.3,44.5 L 237.9,43.0 L 239.6,43.6 L 241.3,42.7 L 243.0,43.0 L 244.6,41.3 L 246.3,42.1 L 248.0,41.6 L 249.7,39.8 L 251.3,40.1 L 253.0,42.4 L 254.7,45.7 L 256.4,43.6 L 258.0,45.1 L 259.7,43.0 L 261.4,42.7 L 263.1,42.7 L 264.7,40.1 L 266.4,37.7 L 268.1,36.6 L 269.8,35.1 L 271.5,36.9 L 273.1,36.0 L 274.8,36.6 L 276.5,35.7 L 278.2,36.3 L 279.8,36.9 L 281.5,37.7 L 283.2,34.5 L 284.9,34.8 L 286.5,36.0 L 288.2,35.4 L 289.9,35.1 L 291.6,36.3 L 293.2,36.0 L 294.9,34.5 L 296.6,33.9 L 298.3,33.6 L 299.9,32.8 L 301.6,29.8 L 303.3,28.4 L 305.0,26.9 L 306.6,25.7 L 308.3,23.4 L 310.0,25.4" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310.0" cy="25.4" r="3.5" fill="#f87171" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="10" y="96" fill="#64748b" font-size="9" text-anchor="start">11/25</text>
+      <text x="160.0" y="96" fill="#64748b" font-size="9" text-anchor="middle">03/30</text>
+      <text x="310" y="96" fill="#64748b" font-size="9" text-anchor="end">07/30</text>
+    </svg></div>
+    </div>
+            </div>
+            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:10px;">
+                美國投資等級公司債利差(OAS)最新為 0.80%、美國高收益債利差(OAS)最新為 2.84%、BBB級利差為 0.99%、CCC及以下利差為 10.06%、高收益減投資等級價差約 204 個基點、CCC及以下減BBB價差約 907 個基點（此價差走擴通常最早反映信用市場對違約風險升溫的定價），利差愈高代表信用市場要求的違約風險溢酬愈高，通常領先反映企業融資成本與景氣/流動性壓力；愈低評等(CCC及以下)對信用環境轉變愈敏感，通常最早出現變化。資料來源為 FRED（美國聖路易聯邦準備銀行）公開每日資料，原始指數為 ICE BofA/Merrill Lynch Option-Adjusted Spread (OAS)；為 best-effort 擷取，任一項失敗僅省略該卡片，不影響報告其餘內容。單一公司 CDS 與 CDX 指數等更細緻的信用衍生品資料需付費資料源，不在此範圍內。
+            </p>
+        </div>
+    
+
+        <!-- Section 7: Seasonality & Timeline Assessment -->
+        <div class="section-card" style="border-left: 4px solid var(--accent-purple);">
+            <div class="section-header" style="color: var(--accent-purple);">
+                <span>📅</span> 歷史季節性與時間軸評估 (Seasonality & Timeline) — 費城半導體指數(SOX)月份效應
+            </div>
+            
+            <div class="lookback-row">
+                <span class="lookback-label">回溯期間：</span>
+                <button class="lookback-chip" data-years="5">近5年</button>
+                <button class="lookback-chip" data-years="10">近10年</button>
+                <button class="lookback-chip" data-years="15">近15年</button>
+                <button class="lookback-chip" data-years="20">近20年</button>
+                <button class="lookback-chip active" data-years="all">全部（自1994年起）</button>
+            </div>
+
+            <div id="szVerdictBox" class="analysis-box" style="border-left-color: var(--text-muted);">
+                <h4 style="color: var(--text-muted);">8月效應：－ 中性 / 觀望</h4>
+                <p>8月目前未觸發買進條件（歷史勝率 53%、未來三個月 Avg 合計 +4.5%，兩項門檻皆未達標），統計上建議中性看待。 接下來最近3個符合買進訊號的月份（僅列前3個，之後可能還有，詳見下表）：<strong>11月、12月、2月</strong>。</p>
+            </div>
+            <div id="szChartContainer" class="chart-container" style="margin: 4px 0 16px;"><svg viewBox="0 0 700 220" width="100%" height="220" style="overflow:visible; font-family:sans-serif;"><line x1="8" y1="102.0" x2="692" y2="102.0" stroke="#475569" stroke-width="1"/><rect x="20.5" y="44.3" width="31.9" height="57.7" rx="3" fill="#ef4444"/><text x="36.5" y="38.3" text-anchor="middle" font-size="10" fill="#94a3b8">+3.6%</text><text x="36.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">1月</text><rect x="77.5" y="61.2" width="31.9" height="40.8" rx="3" fill="#ef4444"/><text x="93.5" y="55.2" text-anchor="middle" font-size="10" fill="#94a3b8">+2.5%</text><text x="93.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">2月</text><circle cx="93.5" cy="45.2" r="3" fill="#fbbf24"/><rect x="134.5" y="87.4" width="31.9" height="14.6" rx="3" fill="#ef4444"/><text x="150.5" y="81.4" text-anchor="middle" font-size="10" fill="#94a3b8">+0.9%</text><text x="150.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">3月</text><rect x="191.5" y="51.0" width="31.9" height="51.0" rx="3" fill="#ef4444"/><text x="207.5" y="45.0" text-anchor="middle" font-size="10" fill="#94a3b8">+3.2%</text><text x="207.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">4月</text><rect x="248.5" y="54.3" width="31.9" height="47.7" rx="3" fill="#ef4444"/><text x="264.5" y="48.3" text-anchor="middle" font-size="10" fill="#94a3b8">+3.0%</text><text x="264.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">5月</text><rect x="305.5" y="93.4" width="31.9" height="8.6" rx="3" fill="#ef4444"/><text x="321.5" y="87.4" text-anchor="middle" font-size="10" fill="#94a3b8">+0.5%</text><text x="321.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">6月</text><rect x="362.5" y="86.6" width="31.9" height="15.4" rx="3" fill="#ef4444"/><text x="378.5" y="80.6" text-anchor="middle" font-size="10" fill="#94a3b8">+1.0%</text><text x="378.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">7月</text><rect x="411.6" y="10" width="47.9" height="184" fill="none" stroke="#f8fafc" stroke-width="1.5" stroke-dasharray="3,3" rx="6"/><rect x="419.5" y="102.0" width="31.9" height="1.5" rx="3" fill="#10b981"/><text x="435.5" y="115.6" text-anchor="middle" font-size="10" fill="#94a3b8">-0.0%</text><text x="435.5" y="212" text-anchor="middle" font-size="11" font-weight="700" fill="#f8fafc">8月</text><rect x="476.5" y="102.0" width="31.9" height="34.0" rx="3" fill="#10b981"/><text x="492.5" y="149.0" text-anchor="middle" font-size="10" fill="#94a3b8">-2.1%</text><text x="492.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">9月</text><rect x="533.5" y="66.9" width="31.9" height="35.1" rx="3" fill="#ef4444"/><text x="549.5" y="60.9" text-anchor="middle" font-size="10" fill="#94a3b8">+2.2%</text><text x="549.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">10月</text><rect x="590.5" y="31.5" width="31.9" height="70.5" rx="3" fill="#ef4444"/><text x="606.5" y="25.5" text-anchor="middle" font-size="10" fill="#94a3b8">+4.4%</text><text x="606.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">11月</text><circle cx="606.5" cy="15.5" r="3" fill="#fbbf24"/><rect x="647.5" y="83.9" width="31.9" height="18.1" rx="3" fill="#ef4444"/><text x="663.5" y="77.9" text-anchor="middle" font-size="10" fill="#94a3b8">+1.1%</text><text x="663.5" y="212" text-anchor="middle" font-size="11" fill="#94a3b8">12月</text><circle cx="663.5" cy="67.9" r="3" fill="#fbbf24"/></svg></div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr><th>月份</th><th>歷史勝率</th><th>平均報酬(Avg)</th><th>未來3月合計</th><th>本月至今</th><th>訊號</th></tr>
+                    </thead>
+                    <tbody id="szTableBody"><tr><td><strong>1月</strong></td><td>59%</td><td>+3.6%</td><td>+6.7%</td><td>－</td><td>－</td></tr><tr><td><strong>2月</strong></td><td>62%</td><td>+2.5%</td><td>+7.1%</td><td>－</td><td>✓ 買進訊號</td></tr><tr><td><strong>3月</strong></td><td>50%</td><td>+0.9%</td><td>+6.7%</td><td>－</td><td>－</td></tr><tr><td><strong>4月</strong></td><td>50%</td><td>+3.2%</td><td>+4.5%</td><td>－</td><td>－</td></tr><tr><td><strong>5月</strong></td><td>66%</td><td>+3.0%</td><td>+1.5%</td><td>－</td><td>－</td></tr><tr><td><strong>6月</strong></td><td>44%</td><td>+0.5%</td><td>-1.2%</td><td>－</td><td>－</td></tr><tr><td><strong>7月</strong></td><td>58%</td><td>+1.0%</td><td>+0.0%</td><td>－</td><td>－</td></tr><tr style="background:rgba(251,191,36,0.08);"><td><strong>8月 📍</strong></td><td>53%</td><td>-0.0%</td><td>+4.5%</td><td>－</td><td>－</td></tr><tr><td><strong>9月</strong></td><td>47%</td><td>-2.1%</td><td>+7.7%</td><td>－</td><td>－</td></tr><tr><td><strong>10月</strong></td><td>59%</td><td>+2.2%</td><td>+9.1%</td><td>－</td><td>－</td></tr><tr><td><strong>11月</strong></td><td>69%</td><td>+4.4%</td><td>+7.3%</td><td>－</td><td>✓ 買進訊號</td></tr><tr><td><strong>12月</strong></td><td>62%</td><td>+1.1%</td><td>+7.1%</td><td>－</td><td>✓ 買進訊號</td></tr></tbody>
+                </table>
+            </div>
+            <div id="szMetaLine" style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">
+                資料期間：1994年7月 ～ 2026年7月（共 385 個完整月份，已排除未收官之進行中月份；「本月至今」欄為即時累積，僅供對照）。
+                SOX 為指數無法直接交易，實務上多透過 SOXX/SMH 等 ETF 或成分股曝險；本統計僅供季節性參考，不構成投資建議。
+            </div>
+
+            <h4 style="color:var(--text-main); margin:20px 0 4px; font-size:1rem;">逐年逐月報酬率明細</h4>
+            <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:10px;">
+                比照 RetSeaRel.R / GenMonTableRET.R 產出格式呈現：<strong style="color:var(--hm-pos);">紅色為上漲</strong>、<strong style="color:var(--hm-neg);">綠色為下跌</strong>
+                （已統一改為與本頁其餘區塊一致的紅漲綠跌台股慣例）。最右兩欄為 SOX 該年複合報酬與年度最大回撤 (MDD)。
+                帶「*」的儲存格為當月即時累積報酬（尚未收官），已一併納入該年度複合報酬與 MDD 計算。
+                本表固定顯示全部歷史年度，不受上方回溯期間選單影響。
+            </p>
+            <div class="table-responsive"><table class="heatmap-table"><thead><tr><th>年 / 月</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>SOX 年報酬</th><th>MDD</th></tr></thead><tbody><tr><td class="hm-year">1994</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-pos">+2.5</td><td class="hm-cell hm-pos">+10.2</td><td class="hm-cell hm-neg">-4.5</td><td class="hm-cell hm-pos">+10.1</td><td class="hm-cell hm-neg">-2.4</td><td class="hm-cell hm-pos">+1.2</td><td class="hm-cell hm-pos">+17.3</td><td class="hm-cell hm-mdd">-4.55</td></tr><tr><td class="hm-year">1995</td><td class="hm-cell hm-neg">-0.4</td><td class="hm-cell hm-pos">+16.2</td><td class="hm-cell hm-pos">+7.6</td><td class="hm-cell hm-pos">+13.1</td><td class="hm-cell hm-pos">+8.5</td><td class="hm-cell hm-pos">+14.0</td><td class="hm-cell hm-pos">+15.6</td><td class="hm-cell hm-neg">-2.3</td><td class="hm-cell hm-neg">-0.2</td><td class="hm-cell hm-neg">-7.4</td><td class="hm-cell hm-neg">-10.6</td><td class="hm-cell hm-neg">-11.8</td><td class="hm-cell hm-pos">+43.2</td><td class="hm-cell hm-mdd">-28.88</td></tr><tr><td class="hm-year">1996</td><td class="hm-cell hm-neg">-6.9</td><td class="hm-cell hm-neg">-0.3</td><td class="hm-cell hm-neg">-5.5</td><td class="hm-cell hm-pos">+17.1</td><td class="hm-cell hm-neg">-0.1</td><td class="hm-cell hm-neg">-15.2</td><td class="hm-cell hm-neg">-10.7</td><td class="hm-cell hm-pos">+8.7</td><td class="hm-cell hm-pos">+10.6</td><td class="hm-cell hm-neg">-0.2</td><td class="hm-cell hm-pos">+27.2</td><td class="hm-cell hm-pos">+1.0</td><td class="hm-cell hm-pos">+19.8</td><td class="hm-cell hm-mdd">-24.33</td></tr><tr><td class="hm-year">1997</td><td class="hm-cell hm-pos">+20.2</td><td class="hm-cell hm-neg">-5.5</td><td class="hm-cell hm-neg">-1.5</td><td class="hm-cell hm-pos">+5.4</td><td class="hm-cell hm-pos">+9.9</td><td class="hm-cell hm-neg">-1.8</td><td class="hm-cell hm-pos">+19.8</td><td class="hm-cell hm-pos">+1.9</td><td class="hm-cell hm-pos">+2.3</td><td class="hm-cell hm-neg">-20.9</td><td class="hm-cell hm-neg">-3.7</td><td class="hm-cell hm-neg">-9.3</td><td class="hm-cell hm-pos">+9.7</td><td class="hm-cell hm-mdd">-30.91</td></tr><tr><td class="hm-year">1998</td><td class="hm-cell hm-pos">+9.7</td><td class="hm-cell hm-pos">+9.4</td><td class="hm-cell hm-neg">-5.6</td><td class="hm-cell hm-pos">+5.8</td><td class="hm-cell hm-neg">-17.9</td><td class="hm-cell hm-neg">-5.2</td><td class="hm-cell hm-pos">+3.7</td><td class="hm-cell hm-neg">-24.2</td><td class="hm-cell hm-pos">+10.0</td><td class="hm-cell hm-pos">+23.4</td><td class="hm-cell hm-pos">+16.6</td><td class="hm-cell hm-pos">+14.5</td><td class="hm-cell hm-pos">+33.0</td><td class="hm-cell hm-mdd">-38.86</td></tr><tr><td class="hm-year">1999</td><td class="hm-cell hm-pos">+19.9</td><td class="hm-cell hm-neg">-15.3</td><td class="hm-cell hm-pos">+4.1</td><td class="hm-cell hm-neg">-0.1</td><td class="hm-cell hm-pos">+4.8</td><td class="hm-cell hm-pos">+24.8</td><td class="hm-cell hm-pos">+2.0</td><td class="hm-cell hm-pos">+5.7</td><td class="hm-cell hm-neg">-4.4</td><td class="hm-cell hm-pos">+11.4</td><td class="hm-cell hm-pos">+9.6</td><td class="hm-cell hm-pos">+15.6</td><td class="hm-cell hm-pos">+101.0</td><td class="hm-cell hm-mdd">-15.27</td></tr><tr><td class="hm-year">2000</td><td class="hm-cell hm-pos">+10.4</td><td class="hm-cell hm-pos">+50.4</td><td class="hm-cell hm-pos">+1.0</td><td class="hm-cell hm-neg">-0.9</td><td class="hm-cell hm-neg">-14.8</td><td class="hm-cell hm-pos">+14.2</td><td class="hm-cell hm-neg">-12.9</td><td class="hm-cell hm-pos">+16.0</td><td class="hm-cell hm-neg">-26.1</td><td class="hm-cell hm-neg">-12.9</td><td class="hm-cell hm-neg">-27.6</td><td class="hm-cell hm-pos">+7.4</td><td class="hm-cell hm-neg">-18.2</td><td class="hm-cell hm-mdd">-54.57</td></tr><tr><td class="hm-year">2001</td><td class="hm-cell hm-pos">+27.0</td><td class="hm-cell hm-neg">-26.1</td><td class="hm-cell hm-pos">+0.7</td><td class="hm-cell hm-pos">+21.6</td><td class="hm-cell hm-neg">-9.7</td><td class="hm-cell hm-pos">+4.2</td><td class="hm-cell hm-neg">-2.9</td><td class="hm-cell hm-neg">-7.1</td><td class="hm-cell hm-neg">-33.6</td><td class="hm-cell hm-pos">+19.9</td><td class="hm-cell hm-pos">+15.8</td><td class="hm-cell hm-pos">+0.6</td><td class="hm-cell hm-neg">-9.4</td><td class="hm-cell hm-mdd">-48.96</td></tr><tr><td class="hm-year">2002</td><td class="hm-cell hm-pos">+7.0</td><td class="hm-cell hm-neg">-8.6</td><td class="hm-cell hm-pos">+16.5</td><td class="hm-cell hm-neg">-11.7</td><td class="hm-cell hm-neg">-9.4</td><td class="hm-cell hm-neg">-18.6</td><td class="hm-cell hm-neg">-14.6</td><td class="hm-cell hm-neg">-9.3</td><td class="hm-cell hm-neg">-20.6</td><td class="hm-cell hm-pos">+23.9</td><td class="hm-cell hm-pos">+26.6</td><td class="hm-cell hm-neg">-22.6</td><td class="hm-cell hm-neg">-44.6</td><td class="hm-cell hm-mdd">-59.98</td></tr><tr><td class="hm-year">2003</td><td class="hm-cell hm-neg">-6.1</td><td class="hm-cell hm-pos">+9.5</td><td class="hm-cell hm-neg">-0.5</td><td class="hm-cell hm-pos">+12.2</td><td class="hm-cell hm-pos">+15.0</td><td class="hm-cell hm-neg">-5.9</td><td class="hm-cell hm-pos">+8.3</td><td class="hm-cell hm-pos">+17.0</td><td class="hm-cell hm-neg">-8.0</td><td class="hm-cell hm-pos">+18.3</td><td class="hm-cell hm-pos">+6.6</td><td class="hm-cell hm-neg">-4.0</td><td class="hm-cell hm-pos">+75.7</td><td class="hm-cell hm-mdd">-7.96</td></tr><tr><td class="hm-year">2004</td><td class="hm-cell hm-pos">+1.2</td><td class="hm-cell hm-neg">-2.4</td><td class="hm-cell hm-neg">-3.0</td><td class="hm-cell hm-neg">-9.0</td><td class="hm-cell hm-pos">+10.2</td><td class="hm-cell hm-neg">-0.8</td><td class="hm-cell hm-neg">-14.2</td><td class="hm-cell hm-neg">-10.9</td><td class="hm-cell hm-pos">+3.6</td><td class="hm-cell hm-pos">+7.3</td><td class="hm-cell hm-pos">+2.8</td><td class="hm-cell hm-pos">+2.2</td><td class="hm-cell hm-neg">-14.7</td><td class="hm-cell hm-mdd">-27.88</td></tr><tr><td class="hm-year">2005</td><td class="hm-cell hm-neg">-6.8</td><td class="hm-cell hm-pos">+8.2</td><td class="hm-cell hm-neg">-4.6</td><td class="hm-cell hm-neg">-7.5</td><td class="hm-cell hm-pos">+11.2</td><td class="hm-cell hm-neg">-2.3</td><td class="hm-cell hm-pos">+13.2</td><td class="hm-cell hm-neg">-0.1</td><td class="hm-cell hm-pos">+0.3</td><td class="hm-cell hm-neg">-9.0</td><td class="hm-cell hm-pos">+11.3</td><td class="hm-cell hm-neg">-0.4</td><td class="hm-cell hm-pos">+10.7</td><td class="hm-cell hm-mdd">-11.80</td></tr><tr><td class="hm-year">2006</td><td class="hm-cell hm-pos">+12.4</td><td class="hm-cell hm-neg">-3.0</td><td class="hm-cell hm-neg">-4.5</td><td class="hm-cell hm-pos">+3.5</td><td class="hm-cell hm-neg">-10.1</td><td class="hm-cell hm-neg">-5.0</td><td class="hm-cell hm-neg">-6.6</td><td class="hm-cell hm-pos">+8.8</td><td class="hm-cell hm-pos">+1.2</td><td class="hm-cell hm-pos">+0.8</td><td class="hm-cell hm-pos">+4.6</td><td class="hm-cell hm-neg">-2.5</td><td class="hm-cell hm-neg">-2.6</td><td class="hm-cell hm-mdd">-23.44</td></tr><tr><td class="hm-year">2007</td><td class="hm-cell hm-neg">-1.7</td><td class="hm-cell hm-pos">+3.2</td><td class="hm-cell hm-neg">-1.7</td><td class="hm-cell hm-pos">+5.9</td><td class="hm-cell hm-neg">-0.9</td><td class="hm-cell hm-pos">+2.6</td><td class="hm-cell hm-neg">-0.4</td><td class="hm-cell hm-neg">-0.3</td><td class="hm-cell hm-pos">+0.5</td><td class="hm-cell hm-neg">-7.3</td><td class="hm-cell hm-neg">-10.5</td><td class="hm-cell hm-neg">-1.6</td><td class="hm-cell hm-neg">-12.6</td><td class="hm-cell hm-mdd">-18.58</td></tr><tr><td class="hm-year">2008</td><td class="hm-cell hm-neg">-12.0</td><td class="hm-cell hm-neg">-3.1</td><td class="hm-cell hm-neg">-1.2</td><td class="hm-cell hm-pos">+12.0</td><td class="hm-cell hm-pos">+7.8</td><td class="hm-cell hm-neg">-11.3</td><td class="hm-cell hm-neg">-7.4</td><td class="hm-cell hm-pos">+3.5</td><td class="hm-cell hm-neg">-13.0</td><td class="hm-cell hm-neg">-22.0</td><td class="hm-cell hm-neg">-17.2</td><td class="hm-cell hm-pos">+7.0</td><td class="hm-cell hm-neg">-48.0</td><td class="hm-cell hm-mdd">-52.25</td></tr><tr><td class="hm-year">2009</td><td class="hm-cell hm-neg">-1.8</td><td class="hm-cell hm-neg">-4.4</td><td class="hm-cell hm-pos">+16.0</td><td class="hm-cell hm-pos">+12.0</td><td class="hm-cell hm-pos">+4.9</td><td class="hm-cell hm-neg">-3.0</td><td class="hm-cell hm-pos">+14.7</td><td class="hm-cell hm-pos">+1.5</td><td class="hm-cell hm-pos">+6.4</td><td class="hm-cell hm-neg">-8.9</td><td class="hm-cell hm-pos">+4.5</td><td class="hm-cell hm-pos">+16.1</td><td class="hm-cell hm-pos">+69.6</td><td class="hm-cell hm-mdd">-8.95</td></tr><tr><td class="hm-year">2010</td><td class="hm-cell hm-neg">-12.2</td><td class="hm-cell hm-pos">+7.2</td><td class="hm-cell hm-pos">+8.2</td><td class="hm-cell hm-pos">+2.6</td><td class="hm-cell hm-neg">-5.4</td><td class="hm-cell hm-neg">-6.6</td><td class="hm-cell hm-pos">+5.0</td><td class="hm-cell hm-neg">-11.8</td><td class="hm-cell hm-pos">+13.6</td><td class="hm-cell hm-pos">+6.7</td><td class="hm-cell hm-pos">+4.7</td><td class="hm-cell hm-pos">+5.6</td><td class="hm-cell hm-pos">+14.4</td><td class="hm-cell hm-mdd">-18.24</td></tr><tr><td class="hm-year">2011</td><td class="hm-cell hm-pos">+7.0</td><td class="hm-cell hm-pos">+4.1</td><td class="hm-cell hm-neg">-4.6</td><td class="hm-cell hm-pos">+2.8</td><td class="hm-cell hm-neg">-2.2</td><td class="hm-cell hm-neg">-6.7</td><td class="hm-cell hm-neg">-5.7</td><td class="hm-cell hm-neg">-8.1</td><td class="hm-cell hm-neg">-4.8</td><td class="hm-cell hm-pos">+14.1</td><td class="hm-cell hm-neg">-3.4</td><td class="hm-cell hm-neg">-2.4</td><td class="hm-cell hm-neg">-11.5</td><td class="hm-cell hm-mdd">-26.12</td></tr><tr><td class="hm-year">2012</td><td class="hm-cell hm-pos">+12.2</td><td class="hm-cell hm-pos">+3.7</td><td class="hm-cell hm-pos">+3.4</td><td class="hm-cell hm-neg">-5.8</td><td class="hm-cell hm-neg">-10.9</td><td class="hm-cell hm-pos">+4.6</td><td class="hm-cell hm-neg">-0.5</td><td class="hm-cell hm-pos">+3.2</td><td class="hm-cell hm-neg">-3.5</td><td class="hm-cell hm-neg">-4.0</td><td class="hm-cell hm-pos">+2.0</td><td class="hm-cell hm-pos">+2.6</td><td class="hm-cell hm-pos">+5.4</td><td class="hm-cell hm-mdd">-16.33</td></tr><tr><td class="hm-year">2013</td><td class="hm-cell hm-pos">+7.5</td><td class="hm-cell hm-pos">+3.4</td><td class="hm-cell hm-pos">+2.4</td><td class="hm-cell hm-pos">+1.8</td><td class="hm-cell hm-pos">+5.5</td><td class="hm-cell hm-neg">-0.0</td><td class="hm-cell hm-pos">+2.0</td><td class="hm-cell hm-neg">-4.2</td><td class="hm-cell hm-pos">+7.2</td><td class="hm-cell hm-pos">+3.3</td><td class="hm-cell hm-pos">+0.6</td><td class="hm-cell hm-pos">+4.9</td><td class="hm-cell hm-pos">+39.3</td><td class="hm-cell hm-mdd">-4.20</td></tr><tr><td class="hm-year">2014</td><td class="hm-cell hm-neg">-1.1</td><td class="hm-cell hm-pos">+6.5</td><td class="hm-cell hm-pos">+4.1</td><td class="hm-cell hm-neg">-1.8</td><td class="hm-cell hm-pos">+4.1</td><td class="hm-cell hm-pos">+6.1</td><td class="hm-cell hm-neg">-4.5</td><td class="hm-cell hm-pos">+6.2</td><td class="hm-cell hm-neg">-1.0</td><td class="hm-cell hm-pos">+0.4</td><td class="hm-cell hm-pos">+7.0</td><td class="hm-cell hm-pos">+0.2</td><td class="hm-cell hm-pos">+28.4</td><td class="hm-cell hm-mdd">-4.46</td></tr><tr><td class="hm-year">2015</td><td class="hm-cell hm-neg">-4.9</td><td class="hm-cell hm-pos">+9.4</td><td class="hm-cell hm-neg">-2.7</td><td class="hm-cell hm-neg">-1.3</td><td class="hm-cell hm-pos">+8.6</td><td class="hm-cell hm-neg">-8.7</td><td class="hm-cell hm-neg">-5.0</td><td class="hm-cell hm-neg">-5.5</td><td class="hm-cell hm-neg">-1.4</td><td class="hm-cell hm-pos">+9.9</td><td class="hm-cell hm-pos">+2.2</td><td class="hm-cell hm-neg">-2.0</td><td class="hm-cell hm-neg">-3.4</td><td class="hm-cell hm-mdd">-19.14</td></tr><tr><td class="hm-year">2016</td><td class="hm-cell hm-neg">-7.5</td><td class="hm-cell hm-pos">+1.4</td><td class="hm-cell hm-pos">+8.8</td><td class="hm-cell hm-neg">-4.7</td><td class="hm-cell hm-pos">+8.4</td><td class="hm-cell hm-neg">-1.1</td><td class="hm-cell hm-pos">+10.9</td><td class="hm-cell hm-pos">+4.5</td><td class="hm-cell hm-pos">+4.3</td><td class="hm-cell hm-neg">-1.4</td><td class="hm-cell hm-pos">+6.8</td><td class="hm-cell hm-pos">+3.1</td><td class="hm-cell hm-pos">+36.6</td><td class="hm-cell hm-mdd">-7.51</td></tr><tr><td class="hm-year">2017</td><td class="hm-cell hm-pos">+4.2</td><td class="hm-cell hm-pos">+2.7</td><td class="hm-cell hm-pos">+4.3</td><td class="hm-cell hm-neg">-0.6</td><td class="hm-cell hm-pos">+8.5</td><td class="hm-cell hm-neg">-5.2</td><td class="hm-cell hm-pos">+4.9</td><td class="hm-cell hm-pos">+2.7</td><td class="hm-cell hm-pos">+5.2</td><td class="hm-cell hm-pos">+8.9</td><td class="hm-cell hm-neg">-0.2</td><td class="hm-cell hm-neg">-1.5</td><td class="hm-cell hm-pos">+38.2</td><td class="hm-cell hm-mdd">-5.18</td></tr><tr><td class="hm-year">2018</td><td class="hm-cell hm-pos">+8.7</td><td class="hm-cell hm-pos">+0.0</td><td class="hm-cell hm-neg">-2.4</td><td class="hm-cell hm-neg">-6.4</td><td class="hm-cell hm-pos">+10.8</td><td class="hm-cell hm-neg">-4.7</td><td class="hm-cell hm-pos">+4.1</td><td class="hm-cell hm-pos">+2.5</td><td class="hm-cell hm-neg">-2.5</td><td class="hm-cell hm-neg">-12.0</td><td class="hm-cell hm-pos">+3.1</td><td class="hm-cell hm-neg">-6.8</td><td class="hm-cell hm-neg">-7.8</td><td class="hm-cell hm-mdd">-17.56</td></tr><tr><td class="hm-year">2019</td><td class="hm-cell hm-pos">+10.1</td><td class="hm-cell hm-pos">+6.1</td><td class="hm-cell hm-pos">+3.4</td><td class="hm-cell hm-pos">+11.5</td><td class="hm-cell hm-neg">-16.7</td><td class="hm-cell hm-pos">+12.6</td><td class="hm-cell hm-pos">+5.7</td><td class="hm-cell hm-neg">-2.4</td><td class="hm-cell hm-pos">+3.6</td><td class="hm-cell hm-pos">+5.9</td><td class="hm-cell hm-pos">+4.0</td><td class="hm-cell hm-pos">+7.7</td><td class="hm-cell hm-pos">+60.1</td><td class="hm-cell hm-mdd">-16.71</td></tr><tr><td class="hm-year">2020</td><td class="hm-cell hm-neg">-3.2</td><td class="hm-cell hm-neg">-4.7</td><td class="hm-cell hm-neg">-11.4</td><td class="hm-cell hm-pos">+14.6</td><td class="hm-cell hm-pos">+7.0</td><td class="hm-cell hm-pos">+7.8</td><td class="hm-cell hm-pos">+7.0</td><td class="hm-cell hm-pos">+5.8</td><td class="hm-cell hm-neg">-0.7</td><td class="hm-cell hm-pos">+0.1</td><td class="hm-cell hm-pos">+18.6</td><td class="hm-cell hm-pos">+5.0</td><td class="hm-cell hm-pos">+51.1</td><td class="hm-cell hm-mdd">-18.33</td></tr><tr><td class="hm-year">2021</td><td class="hm-cell hm-pos">+3.3</td><td class="hm-cell hm-pos">+6.3</td><td class="hm-cell hm-pos">+1.9</td><td class="hm-cell hm-neg">-0.5</td><td class="hm-cell hm-pos">+2.5</td><td class="hm-cell hm-pos">+5.0</td><td class="hm-cell hm-pos">+0.3</td><td class="hm-cell hm-pos">+1.8</td><td class="hm-cell hm-neg">-4.7</td><td class="hm-cell hm-pos">+5.9</td><td class="hm-cell hm-pos">+11.1</td><td class="hm-cell hm-pos">+2.9</td><td class="hm-cell hm-pos">+41.2</td><td class="hm-cell hm-mdd">-4.67</td></tr><tr><td class="hm-year">2022</td><td class="hm-cell hm-neg">-11.7</td><td class="hm-cell hm-neg">-1.5</td><td class="hm-cell hm-neg">-0.0</td><td class="hm-cell hm-neg">-14.9</td><td class="hm-cell hm-pos">+6.1</td><td class="hm-cell hm-neg">-17.5</td><td class="hm-cell hm-pos">+16.1</td><td class="hm-cell hm-neg">-9.8</td><td class="hm-cell hm-neg">-13.8</td><td class="hm-cell hm-pos">+3.4</td><td class="hm-cell hm-pos">+18.6</td><td class="hm-cell hm-neg">-10.4</td><td class="hm-cell hm-neg">-35.8</td><td class="hm-cell hm-mdd">-41.55</td></tr><tr><td class="hm-year">2023</td><td class="hm-cell hm-pos">+15.4</td><td class="hm-cell hm-pos">+1.2</td><td class="hm-cell hm-pos">+9.2</td><td class="hm-cell hm-neg">-7.3</td><td class="hm-cell hm-pos">+15.3</td><td class="hm-cell hm-pos">+6.4</td><td class="hm-cell hm-pos">+5.1</td><td class="hm-cell hm-neg">-4.9</td><td class="hm-cell hm-neg">-6.4</td><td class="hm-cell hm-neg">-6.4</td><td class="hm-cell hm-pos">+15.8</td><td class="hm-cell hm-pos">+12.1</td><td class="hm-cell hm-pos">+64.9</td><td class="hm-cell hm-mdd">-16.72</td></tr><tr><td class="hm-year">2024</td><td class="hm-cell hm-pos">+2.0</td><td class="hm-cell hm-pos">+10.9</td><td class="hm-cell hm-pos">+3.8</td><td class="hm-cell hm-neg">-4.7</td><td class="hm-cell hm-pos">+9.6</td><td class="hm-cell hm-pos">+6.8</td><td class="hm-cell hm-neg">-4.4</td><td class="hm-cell hm-neg">-1.4</td><td class="hm-cell hm-pos">+0.3</td><td class="hm-cell hm-neg">-4.4</td><td class="hm-cell hm-neg">-0.4</td><td class="hm-cell hm-pos">+1.1</td><td class="hm-cell hm-pos">+19.3</td><td class="hm-cell hm-mdd">-9.97</td></tr><tr><td class="hm-year">2025</td><td class="hm-cell hm-pos">+0.7</td><td class="hm-cell hm-neg">-5.0</td><td class="hm-cell hm-neg">-10.4</td><td class="hm-cell hm-neg">-0.9</td><td class="hm-cell hm-pos">+12.5</td><td class="hm-cell hm-pos">+16.6</td><td class="hm-cell hm-pos">+1.1</td><td class="hm-cell hm-pos">+1.1</td><td class="hm-cell hm-pos">+12.4</td><td class="hm-cell hm-pos">+13.5</td><td class="hm-cell hm-neg">-2.8</td><td class="hm-cell hm-pos">+0.8</td><td class="hm-cell hm-pos">+42.2</td><td class="hm-cell hm-mdd">-15.67</td></tr><tr><td class="hm-year">2026</td><td class="hm-cell hm-pos">+12.9</td><td class="hm-cell hm-pos">+1.2</td><td class="hm-cell hm-neg">-6.3</td><td class="hm-cell hm-pos">+38.4</td><td class="hm-cell hm-pos">+22.1</td><td class="hm-cell hm-pos">+11.0</td><td class="hm-cell hm-neg">-20.6</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-empty">—</td><td class="hm-cell hm-pos">+59.7</td><td class="hm-cell hm-mdd">-20.61</td></tr><tr class="hm-avg-row"><td class="hm-year">Avg</td><td class="hm-cell hm-avg">+3.6</td><td class="hm-cell hm-avg">+2.5</td><td class="hm-cell hm-avg">+0.9</td><td class="hm-cell hm-avg">+3.2</td><td class="hm-cell hm-avg">+3.0</td><td class="hm-cell hm-avg">+0.5</td><td class="hm-cell hm-avg">+1.0</td><td class="hm-cell hm-avg">-0.0</td><td class="hm-cell hm-avg">-2.1</td><td class="hm-cell hm-avg">+2.2</td><td class="hm-cell hm-avg">+4.4</td><td class="hm-cell hm-avg">+1.1</td><td class="hm-cell hm-avg">+20.36</td><td class="hm-cell hm-avg">-21.82</td></tr></tbody></table></div>
+
+            <script>
+                (function() {
+                    var SOX_RETURNS = [{"y": 1994, "m": 7, "r": 2.5028297700752744}, {"y": 1994, "m": 8, "r": 10.162910358369395}, {"y": 1994, "m": 9, "r": -4.547809328696953}, {"y": 1994, "m": 10, "r": 10.099798038641538}, {"y": 1994, "m": 11, "r": -2.3982570732939554}, {"y": 1994, "m": 12, "r": 1.2394389370522274}, {"y": 1995, "m": 1, "r": -0.4069010221650825}, {"y": 1995, "m": 2, "r": 16.23480915713277}, {"y": 1995, "m": 3, "r": 7.5663705364641}, {"y": 1995, "m": 4, "r": 13.07937212183728}, {"y": 1995, "m": 5, "r": 8.52725339630862}, {"y": 1995, "m": 6, "r": 13.98374201634694}, {"y": 1995, "m": 7, "r": 15.632871560151665}, {"y": 1995, "m": 8, "r": -2.310823730183719}, {"y": 1995, "m": 9, "r": -0.19954950506231062}, {"y": 1995, "m": 10, "r": -7.445100141216472}, {"y": 1995, "m": 11, "r": -10.640224252651977}, {"y": 1995, "m": 12, "r": -11.801675307903805}, {"y": 1996, "m": 1, "r": -6.942094926912789}, {"y": 1996, "m": 2, "r": -0.2945445639919209}, {"y": 1996, "m": 3, "r": -5.47319131135766}, {"y": 1996, "m": 4, "r": 17.103238766530822}, {"y": 1996, "m": 5, "r": -0.08248734628855807}, {"y": 1996, "m": 6, "r": -15.156367391511024}, {"y": 1996, "m": 7, "r": -10.743519862146004}, {"y": 1996, "m": 8, "r": 8.670003886617238}, {"y": 1996, "m": 9, "r": 10.621975266643862}, {"y": 1996, "m": 10, "r": -0.19204128745234478}, {"y": 1996, "m": 11, "r": 27.17263211085237}, {"y": 1996, "m": 12, "r": 0.9918469303759561}, {"y": 1997, "m": 1, "r": 20.153977244910422}, {"y": 1997, "m": 2, "r": -5.472246635038931}, {"y": 1997, "m": 3, "r": -1.4948839195963042}, {"y": 1997, "m": 4, "r": 5.359867336793392}, {"y": 1997, "m": 5, "r": 9.881377275081816}, {"y": 1997, "m": 6, "r": -1.7702842620481927}, {"y": 1997, "m": 7, "r": 19.78805584235865}, {"y": 1997, "m": 8, "r": 1.9003992349940237}, {"y": 1997, "m": 9, "r": 2.2508021494448696}, {"y": 1997, "m": 10, "r": -20.88574709965053}, {"y": 1997, "m": 11, "r": -3.7263995453598473}, {"y": 1997, "m": 12, "r": -9.296401025659442}, {"y": 1998, "m": 1, "r": 9.672647091644645}, {"y": 1998, "m": 2, "r": 9.442115080388744}, {"y": 1998, "m": 3, "r": -5.6031289318760615}, {"y": 1998, "m": 4, "r": 5.754938647103813}, {"y": 1998, "m": 5, "r": -17.91130281620746}, {"y": 1998, "m": 6, "r": -5.1598492186130045}, {"y": 1998, "m": 7, "r": 3.749034886061335}, {"y": 1998, "m": 8, "r": -24.174012992845743}, {"y": 1998, "m": 9, "r": 9.975708342370408}, {"y": 1998, "m": 10, "r": 23.42905007460147}, {"y": 1998, "m": 11, "r": 16.575279715420265}, {"y": 1998, "m": 12, "r": 14.505962615542403}, {"y": 1999, "m": 1, "r": 19.936677069595156}, {"y": 1999, "m": 2, "r": -15.26697599661356}, {"y": 1999, "m": 3, "r": 4.0616406063152}, {"y": 1999, "m": 4, "r": -0.12408544197227529}, {"y": 1999, "m": 5, "r": 4.823511599391643}, {"y": 1999, "m": 6, "r": 24.816429060489796}, {"y": 1999, "m": 7, "r": 1.9651127616451536}, {"y": 1999, "m": 8, "r": 5.666340199361081}, {"y": 1999, "m": 9, "r": -4.385396138564158}, {"y": 1999, "m": 10, "r": 11.373155856418975}, {"y": 1999, "m": 11, "r": 9.6360390608297}, {"y": 1999, "m": 12, "r": 15.617253421039507}, {"y": 2000, "m": 1, "r": 10.432042729460733}, {"y": 2000, "m": 2, "r": 50.43312400202859}, {"y": 2000, "m": 3, "r": 0.9765437599234409}, {"y": 2000, "m": 4, "r": -0.8672549791402495}, {"y": 2000, "m": 5, "r": -14.783552952024234}, {"y": 2000, "m": 6, "r": 14.23234855357933}, {"y": 2000, "m": 7, "r": -12.860691954017575}, {"y": 2000, "m": 8, "r": 16.011471428471413}, {"y": 2000, "m": 9, "r": -26.14182190934412}, {"y": 2000, "m": 10, "r": -12.886784326657672}, {"y": 2000, "m": 11, "r": -27.612798368424663}, {"y": 2000, "m": 12, "r": 7.378162691616455}, {"y": 2001, "m": 1, "r": 26.98184579564395}, {"y": 2001, "m": 2, "r": -26.080665037206362}, {"y": 2001, "m": 3, "r": 0.7039516834034169}, {"y": 2001, "m": 4, "r": 21.58006749209261}, {"y": 2001, "m": 5, "r": -9.650492524606888}, {"y": 2001, "m": 6, "r": 4.239114755284927}, {"y": 2001, "m": 7, "r": -2.9178517824437944}, {"y": 2001, "m": 8, "r": -7.123528393718057}, {"y": 2001, "m": 9, "r": -33.590412343089795}, {"y": 2001, "m": 10, "r": 19.8876035266135}, {"y": 2001, "m": 11, "r": 15.831888070332251}, {"y": 2001, "m": 12, "r": 0.6185491592626478}, {"y": 2002, "m": 1, "r": 7.032333695964346}, {"y": 2002, "m": 2, "r": -8.597555448529983}, {"y": 2002, "m": 3, "r": 16.524089399784707}, {"y": 2002, "m": 4, "r": -11.675962828477713}, {"y": 2002, "m": 5, "r": -9.411492636634284}, {"y": 2002, "m": 6, "r": -18.620085956198633}, {"y": 2002, "m": 7, "r": -14.613753571689816}, {"y": 2002, "m": 8, "r": -9.291714441636401}, {"y": 2002, "m": 9, "r": -20.636928759922355}, {"y": 2002, "m": 10, "r": 23.887670874383545}, {"y": 2002, "m": 11, "r": 26.55599068394428}, {"y": 2002, "m": 12, "r": -22.565793596333155}, {"y": 2003, "m": 1, "r": -6.053789185187811}, {"y": 2003, "m": 2, "r": 9.531517627542256}, {"y": 2003, "m": 3, "r": -0.4569485088293136}, {"y": 2003, "m": 4, "r": 12.228714459720802}, {"y": 2003, "m": 5, "r": 14.98045039356203}, {"y": 2003, "m": 6, "r": -5.916663247531398}, {"y": 2003, "m": 7, "r": 8.323835035221336}, {"y": 2003, "m": 8, "r": 17.04950641462049}, {"y": 2003, "m": 9, "r": -7.955093402954222}, {"y": 2003, "m": 10, "r": 18.281002062397388}, {"y": 2003, "m": 11, "r": 6.5979297929737655}, {"y": 2003, "m": 12, "r": -3.9978901542530645}, {"y": 2004, "m": 1, "r": 1.2398622084367663}, {"y": 2004, "m": 2, "r": -2.363822080888136}, {"y": 2004, "m": 3, "r": -3.014377882782754}, {"y": 2004, "m": 4, "r": -8.958774956540392}, {"y": 2004, "m": 5, "r": 10.232698935924168}, {"y": 2004, "m": 6, "r": -0.7711797092496119}, {"y": 2004, "m": 7, "r": -14.154075363426807}, {"y": 2004, "m": 8, "r": -10.904594880480694}, {"y": 2004, "m": 9, "r": 3.5523755009527798}, {"y": 2004, "m": 10, "r": 7.30088154652469}, {"y": 2004, "m": 11, "r": 2.8186768022286235}, {"y": 2004, "m": 12, "r": 2.227098532604642}, {"y": 2005, "m": 1, "r": -6.773443093601091}, {"y": 2005, "m": 2, "r": 8.235968965988492}, {"y": 2005, "m": 3, "r": -4.62914718646475}, {"y": 2005, "m": 4, "r": -7.515767062004425}, {"y": 2005, "m": 5, "r": 11.227802151131215}, {"y": 2005, "m": 6, "r": -2.303299825538634}, {"y": 2005, "m": 7, "r": 13.212588386061666}, {"y": 2005, "m": 8, "r": -0.14543513149304182}, {"y": 2005, "m": 9, "r": 0.3313999628957784}, {"y": 2005, "m": 10, "r": -8.979212323934211}, {"y": 2005, "m": 11, "r": 11.32581322599513}, {"y": 2005, "m": 12, "r": -0.44639655109051996}, {"y": 2006, "m": 1, "r": 12.434043740526306}, {"y": 2006, "m": 2, "r": -2.953012064833963}, {"y": 2006, "m": 3, "r": -4.499323082450949}, {"y": 2006, "m": 4, "r": 3.4544139815646093}, {"y": 2006, "m": 5, "r": -10.092663252904426}, {"y": 2006, "m": 6, "r": -4.9533049656567245}, {"y": 2006, "m": 7, "r": -6.556187488691148}, {"y": 2006, "m": 8, "r": 8.833217994102913}, {"y": 2006, "m": 9, "r": 1.2198947000215556}, {"y": 2006, "m": 10, "r": 0.7565432920727455}, {"y": 2006, "m": 11, "r": 4.557553083691461}, {"y": 2006, "m": 12, "r": -2.5009353980023734}, {"y": 2007, "m": 1, "r": -1.7364713345239178}, {"y": 2007, "m": 2, "r": 3.1856700042518336}, {"y": 2007, "m": 3, "r": -1.6851400431750758}, {"y": 2007, "m": 4, "r": 5.878814074491547}, {"y": 2007, "m": 5, "r": -0.9494041166475512}, {"y": 2007, "m": 6, "r": 2.642033678465013}, {"y": 2007, "m": 7, "r": -0.4150405209203672}, {"y": 2007, "m": 8, "r": -0.32860146168612375}, {"y": 2007, "m": 9, "r": 0.5327263355336043}, {"y": 2007, "m": 10, "r": -7.338675430063278}, {"y": 2007, "m": 11, "r": -10.533249861502266}, {"y": 2007, "m": 12, "r": -1.5774948717172974}, {"y": 2008, "m": 1, "r": -12.018431408184565}, {"y": 2008, "m": 2, "r": -3.050142676053273}, {"y": 2008, "m": 3, "r": -1.1808606509727133}, {"y": 2008, "m": 4, "r": 11.984648755047148}, {"y": 2008, "m": 5, "r": 7.799358256127544}, {"y": 2008, "m": 6, "r": -11.324667184211064}, {"y": 2008, "m": 7, "r": -7.4202856938716675}, {"y": 2008, "m": 8, "r": 3.508778526854861}, {"y": 2008, "m": 9, "r": -13.017967156713581}, {"y": 2008, "m": 10, "r": -21.968786930056485}, {"y": 2008, "m": 11, "r": -17.21718608484083}, {"y": 2008, "m": 12, "r": 7.026832268858871}, {"y": 2009, "m": 1, "r": -1.8428635979889783}, {"y": 2009, "m": 2, "r": -4.446362600154581}, {"y": 2009, "m": 3, "r": 16.035177719652953}, {"y": 2009, "m": 4, "r": 11.961367926529437}, {"y": 2009, "m": 5, "r": 4.943333013437626}, {"y": 2009, "m": 6, "r": -3.0076310255935526}, {"y": 2009, "m": 7, "r": 14.664638887687309}, {"y": 2009, "m": 8, "r": 1.4714663568317548}, {"y": 2009, "m": 9, "r": 6.3916675786656425}, {"y": 2009, "m": 10, "r": -8.945514857540292}, {"y": 2009, "m": 11, "r": 4.53120363614065}, {"y": 2009, "m": 12, "r": 16.081282964743707}, {"y": 2010, "m": 1, "r": -12.180821842075964}, {"y": 2010, "m": 2, "r": 7.210420950813663}, {"y": 2010, "m": 3, "r": 8.177425240666137}, {"y": 2010, "m": 4, "r": 2.5915922771056312}, {"y": 2010, "m": 5, "r": -5.427181977985667}, {"y": 2010, "m": 6, "r": -6.568075023508557}, {"y": 2010, "m": 7, "r": 4.968405167655663}, {"y": 2010, "m": 8, "r": -11.845992836623823}, {"y": 2010, "m": 9, "r": 13.577677754055447}, {"y": 2010, "m": 10, "r": 6.7002706071428815}, {"y": 2010, "m": 11, "r": 4.6908490182519085}, {"y": 2010, "m": 12, "r": 5.562394257826446}, {"y": 2011, "m": 1, "r": 6.966636377823942}, {"y": 2011, "m": 2, "r": 4.111140484911566}, {"y": 2011, "m": 3, "r": -4.6356482473453}, {"y": 2011, "m": 4, "r": 2.7894669415686324}, {"y": 2011, "m": 5, "r": -2.2154977109100953}, {"y": 2011, "m": 6, "r": -6.653776067762907}, {"y": 2011, "m": 7, "r": -5.704886880446135}, {"y": 2011, "m": 8, "r": -8.05034209436678}, {"y": 2011, "m": 9, "r": -4.769667729036438}, {"y": 2011, "m": 10, "r": 14.069412041698168}, {"y": 2011, "m": 11, "r": -3.4075870638123686}, {"y": 2011, "m": 12, "r": -2.378657641860712}, {"y": 2012, "m": 1, "r": 12.210514680576152}, {"y": 2012, "m": 2, "r": 3.7242653923322924}, {"y": 2012, "m": 3, "r": 3.4113682633457474}, {"y": 2012, "m": 4, "r": -5.756428770010288}, {"y": 2012, "m": 5, "r": -10.890446778095676}, {"y": 2012, "m": 6, "r": 4.639356235421367}, {"y": 2012, "m": 7, "r": -0.4514061829884568}, {"y": 2012, "m": 8, "r": 3.2471571498592664}, {"y": 2012, "m": 9, "r": -3.5110313290082766}, {"y": 2012, "m": 10, "r": -3.9867085233912887}, {"y": 2012, "m": 11, "r": 1.9943893819481577}, {"y": 2012, "m": 12, "r": 2.59382697923427}, {"y": 2013, "m": 1, "r": 7.464982974010555}, {"y": 2013, "m": 2, "r": 3.3678175869175693}, {"y": 2013, "m": 3, "r": 2.350982974592219}, {"y": 2013, "m": 4, "r": 1.7633814924371745}, {"y": 2013, "m": 5, "r": 5.461792315086244}, {"y": 2013, "m": 6, "r": -0.04268019651905683}, {"y": 2013, "m": 7, "r": 1.9960306235102947}, {"y": 2013, "m": 8, "r": -4.202768350196524}, {"y": 2013, "m": 9, "r": 7.238359947923424}, {"y": 2013, "m": 10, "r": 3.312758024255516}, {"y": 2013, "m": 11, "r": 0.6231642676704987}, {"y": 2013, "m": 12, "r": 4.856448661807937}, {"y": 2014, "m": 1, "r": -1.0934034167730253}, {"y": 2014, "m": 2, "r": 6.54787121464207}, {"y": 2014, "m": 3, "r": 4.063276599351512}, {"y": 2014, "m": 4, "r": -1.8355693681195797}, {"y": 2014, "m": 5, "r": 4.100917991177417}, {"y": 2014, "m": 6, "r": 6.060802246978043}, {"y": 2014, "m": 7, "r": -4.46275615392803}, {"y": 2014, "m": 8, "r": 6.205252730558537}, {"y": 2014, "m": 9, "r": -1.0492087611390932}, {"y": 2014, "m": 10, "r": 0.3727610818846947}, {"y": 2014, "m": 11, "r": 7.003090520340767}, {"y": 2014, "m": 12, "r": 0.164786201607738}, {"y": 2015, "m": 1, "r": -4.91067897979665}, {"y": 2015, "m": 2, "r": 9.417584038046375}, {"y": 2015, "m": 3, "r": -2.6824380172700493}, {"y": 2015, "m": 4, "r": -1.321389932059904}, {"y": 2015, "m": 5, "r": 8.61443369566909}, {"y": 2015, "m": 6, "r": -8.702592862224764}, {"y": 2015, "m": 7, "r": -5.032768258417267}, {"y": 2015, "m": 8, "r": -5.454208048775996}, {"y": 2015, "m": 9, "r": -1.3599760829760115}, {"y": 2015, "m": 10, "r": 9.91987141837554}, {"y": 2015, "m": 11, "r": 2.206725032630942}, {"y": 2015, "m": 12, "r": -2.017313093921885}, {"y": 2016, "m": 1, "r": -7.505876478410841}, {"y": 2016, "m": 2, "r": 1.3736789167632153}, {"y": 2016, "m": 3, "r": 8.80552162587747}, {"y": 2016, "m": 4, "r": -4.661021304820865}, {"y": 2016, "m": 5, "r": 8.370774513912513}, {"y": 2016, "m": 6, "r": -1.0995771280137723}, {"y": 2016, "m": 7, "r": 10.859231749612459}, {"y": 2016, "m": 8, "r": 4.525411440839728}, {"y": 2016, "m": 9, "r": 4.257123814525253}, {"y": 2016, "m": 10, "r": -1.445662566734378}, {"y": 2016, "m": 11, "r": 6.794000126884818}, {"y": 2016, "m": 12, "r": 3.0700309162817514}, {"y": 2017, "m": 1, "r": 4.171131953154689}, {"y": 2017, "m": 2, "r": 2.6581072147239326}, {"y": 2017, "m": 3, "r": 4.334731407661928}, {"y": 2017, "m": 4, "r": -0.5803831298687364}, {"y": 2017, "m": 5, "r": 8.541765252749018}, {"y": 2017, "m": 6, "r": -5.177659149574546}, {"y": 2017, "m": 7, "r": 4.854527309148886}, {"y": 2017, "m": 8, "r": 2.6871891926125837}, {"y": 2017, "m": 9, "r": 5.153855625525009}, {"y": 2017, "m": 10, "r": 8.86459419178918}, {"y": 2017, "m": 11, "r": -0.23988025796099197}, {"y": 2017, "m": 12, "r": -1.5323562336866279}, {"y": 2018, "m": 1, "r": 8.654877853705791}, {"y": 2018, "m": 2, "r": 0.03819460383767903}, {"y": 2018, "m": 3, "r": -2.4316819607824858}, {"y": 2018, "m": 4, "r": -6.358642369448196}, {"y": 2018, "m": 5, "r": 10.816455556509263}, {"y": 2018, "m": 6, "r": -4.7353189868110945}, {"y": 2018, "m": 7, "r": 4.093021354174894}, {"y": 2018, "m": 8, "r": 2.466597526189678}, {"y": 2018, "m": 9, "r": -2.459317880269684}, {"y": 2018, "m": 10, "r": -12.031545325460995}, {"y": 2018, "m": 11, "r": 3.102380873573824}, {"y": 2018, "m": 12, "r": -6.811062705992425}, {"y": 2019, "m": 1, "r": 10.121446837010877}, {"y": 2019, "m": 2, "r": 6.140287829500561}, {"y": 2019, "m": 3, "r": 3.355803601860908}, {"y": 2019, "m": 4, "r": 11.513356609480496}, {"y": 2019, "m": 5, "r": -16.707578238134605}, {"y": 2019, "m": 6, "r": 12.558433279429574}, {"y": 2019, "m": 7, "r": 5.721882896300139}, {"y": 2019, "m": 8, "r": -2.4325029749119715}, {"y": 2019, "m": 9, "r": 3.5769312975303578}, {"y": 2019, "m": 10, "r": 5.932315682638332}, {"y": 2019, "m": 11, "r": 3.974031097095143}, {"y": 2019, "m": 12, "r": 7.733978235614536}, {"y": 2020, "m": 1, "r": -3.22714620104808}, {"y": 2020, "m": 2, "r": -4.7147101906846896}, {"y": 2020, "m": 3, "r": -11.430401443366144}, {"y": 2020, "m": 4, "r": 14.606877405957114}, {"y": 2020, "m": 5, "r": 7.003650602108907}, {"y": 2020, "m": 6, "r": 7.770619648728175}, {"y": 2020, "m": 7, "r": 7.010978281897782}, {"y": 2020, "m": 8, "r": 5.805066660114836}, {"y": 2020, "m": 9, "r": -0.7215359443275157}, {"y": 2020, "m": 10, "r": 0.09044904239768944}, {"y": 2020, "m": 11, "r": 18.58024201568874}, {"y": 2020, "m": 12, "r": 4.956279552378145}, {"y": 2021, "m": 1, "r": 3.2759820470398853}, {"y": 2021, "m": 2, "r": 6.253378298386196}, {"y": 2021, "m": 3, "r": 1.8685437579964363}, {"y": 2021, "m": 4, "r": -0.5104082469084953}, {"y": 2021, "m": 5, "r": 2.495024705870066}, {"y": 2021, "m": 6, "r": 4.981861225928295}, {"y": 2021, "m": 7, "r": 0.33539404439663445}, {"y": 2021, "m": 8, "r": 1.8230118864471487}, {"y": 2021, "m": 9, "r": -4.670654242619516}, {"y": 2021, "m": 10, "r": 5.929238493392762}, {"y": 2021, "m": 11, "r": 11.066939098081676}, {"y": 2021, "m": 12, "r": 2.9466076049675975}, {"y": 2022, "m": 1, "r": -11.731881041694404}, {"y": 2022, "m": 2, "r": -1.5411052518400912}, {"y": 2022, "m": 3, "r": -0.015454866770292343}, {"y": 2022, "m": 4, "r": -14.851560506434092}, {"y": 2022, "m": 5, "r": 6.128968735928785}, {"y": 2022, "m": 6, "r": -17.50546042564296}, {"y": 2022, "m": 7, "r": 16.073932227995112}, {"y": 2022, "m": 8, "r": -9.765296227682695}, {"y": 2022, "m": 9, "r": -13.845198356571947}, {"y": 2022, "m": 10, "r": 3.3706161029092923}, {"y": 2022, "m": 11, "r": 18.553551365880026}, {"y": 2022, "m": 12, "r": -10.426445692282899}, {"y": 2023, "m": 1, "r": 15.394662866774725}, {"y": 2023, "m": 2, "r": 1.2481509308346195}, {"y": 2023, "m": 3, "r": 9.210084699359978}, {"y": 2023, "m": 4, "r": -7.301156004150948}, {"y": 2023, "m": 5, "r": 15.299317369446836}, {"y": 2023, "m": 6, "r": 6.367467994888373}, {"y": 2023, "m": 7, "r": 5.133861717767417}, {"y": 2023, "m": 8, "r": -4.938328036579842}, {"y": 2023, "m": 9, "r": -6.446320060169741}, {"y": 2023, "m": 10, "r": -6.35939725533474}, {"y": 2023, "m": 11, "r": 15.818022461554696}, {"y": 2023, "m": 12, "r": 12.105797895631062}, {"y": 2024, "m": 1, "r": 2.0464690833496366}, {"y": 2024, "m": 2, "r": 10.936605440708181}, {"y": 2024, "m": 3, "r": 3.77180155384944}, {"y": 2024, "m": 4, "r": -4.7278334280654635}, {"y": 2024, "m": 5, "r": 9.630455511164133}, {"y": 2024, "m": 6, "r": 6.809982348581258}, {"y": 2024, "m": 7, "r": -4.368937149979103}, {"y": 2024, "m": 8, "r": -1.4209400224099662}, {"y": 2024, "m": 9, "r": 0.2760366684672213}, {"y": 2024, "m": 10, "r": -4.374781193923938}, {"y": 2024, "m": 11, "r": -0.4081455785364128}, {"y": 2024, "m": 12, "r": 1.0833140477888359}, {"y": 2025, "m": 1, "r": 0.7212936849935832}, {"y": 2025, "m": 2, "r": -4.966258815682045}, {"y": 2025, "m": 3, "r": -10.412121974484712}, {"y": 2025, "m": 4, "r": -0.9446432881640541}, {"y": 2025, "m": 5, "r": 12.481300264197255}, {"y": 2025, "m": 6, "r": 16.571459182080737}, {"y": 2025, "m": 7, "r": 1.106633728057874}, {"y": 2025, "m": 8, "r": 1.0881043306846658}, {"y": 2025, "m": 9, "r": 12.363508699276114}, {"y": 2025, "m": 10, "r": 13.482961146967536}, {"y": 2025, "m": 11, "r": -2.815324686834146}, {"y": 2025, "m": 12, "r": 0.8253201892447385}, {"y": 2026, "m": 1, "r": 12.922822921154676}, {"y": 2026, "m": 2, "r": 1.2489876146360264}, {"y": 2026, "m": 3, "r": -6.299661715784582}, {"y": 2026, "m": 4, "r": 38.42149554516244}, {"y": 2026, "m": 5, "r": 22.14152769266857}, {"y": 2026, "m": 6, "r": 11.049482446334991}, {"y": 2026, "m": 7, "r": -20.60706207402936}];
+                    var CURRENT_MONTH = 8;
+                    var CURRENT_MONTH_LIVE = null;
+                    var MONTH_LABELS = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+                    function fmtPct(v, digits) {
+                        digits = (digits === undefined) ? 1 : digits;
+                        return (v > 0 ? '+' : '') + v.toFixed(digits) + '%';
+                    }
+
+                    function filterByYears(years) {
+                        if (years === 'all') return SOX_RETURNS;
+                        var last = SOX_RETURNS[SOX_RETURNS.length - 1];
+                        var cutoffYear = last.y - years;
+                        return SOX_RETURNS.filter(function(d) {
+                            return (d.y > cutoffYear) || (d.y === cutoffYear && d.m > last.m);
+                        });
+                    }
+
+                    function computeStats(data) {
+                        var byMonth = {};
+                        for (var m = 1; m <= 12; m++) byMonth[m] = [];
+                        data.forEach(function(d) { byMonth[d.m].push(d.r); });
+                        var stats = {};
+                        for (var m2 = 1; m2 <= 12; m2++) {
+                            var arr = byMonth[m2];
+                            var n = arr.length;
+                            var avg = n ? arr.reduce(function(a, b) { return a + b; }, 0) / n : 0;
+                            var winRate = n ? (arr.filter(function(v) { return v > 0; }).length / n * 100) : 0;
+                            stats[m2] = { avg: avg, winRate: winRate, n: n };
+                        }
+                        for (var m3 = 1; m3 <= 12; m3++) {
+                            var mb = (m3 % 12) + 1, mc = ((m3 + 1) % 12) + 1, md = ((m3 + 2) % 12) + 1;
+                            var next3 = stats[mb].avg + stats[mc].avg + stats[md].avg;
+                            stats[m3].next3Sum = next3;
+                            stats[m3].buy = stats[m3].winRate >= 60 && next3 >= 5;
+                        }
+                        return stats;
+                    }
+
+                    function renderVerdict(stats) {
+                        var s = stats[CURRENT_MONTH];
+                        var reasons = [];
+                        if (s.winRate >= 60) reasons.push('歷史勝率 ' + s.winRate.toFixed(0) + '%（≥60% 門檻）');
+                        if (s.next3Sum >= 5) reasons.push('未來三個月 Avg 合計 ' + fmtPct(s.next3Sum) + '（≥5% 門檻）');
+                        var nextBuy = [];
+                        for (var i = 1; i <= 12; i++) {
+                            var mm = ((CURRENT_MONTH - 1 + i) % 12) + 1;
+                            if (stats[mm].buy) nextBuy.push(MONTH_LABELS[mm - 1]);
+                            if (nextBuy.length >= 3) break;
+                        }
+                        var verdict = s.buy ? '✓ 符合買進訊號' : '－ 中性 / 觀望';
+                        var color = s.buy ? 'var(--accent-gold)' : 'var(--text-muted)';
+                        var body;
+                        if (s.buy) {
+                            body = MONTH_LABELS[CURRENT_MONTH - 1] + '符合買進條件（' + reasons.join('、') + '），統計上屬於 SOX 的偏多季節區間。';
+                        } else {
+                            body = MONTH_LABELS[CURRENT_MONTH - 1] + '目前未觸發買進條件（歷史勝率 ' + s.winRate.toFixed(0) + '%、未來三個月 Avg 合計 ' + fmtPct(s.next3Sum) + '，兩項門檻皆未達標），統計上建議中性看待。';
+                        }
+                        if (nextBuy.length) body += ' 接下來最近3個符合買進訊號的月份（僅列前3個，之後可能還有，詳見下表）：<strong>' + nextBuy.join('、') + '</strong>。';
+
+                        if (CURRENT_MONTH_LIVE && CURRENT_MONTH_LIVE.m === CURRENT_MONTH) {
+                            var diff = CURRENT_MONTH_LIVE.r - s.avg;
+                            var cmpWord = diff > 0 ? '高於' : (diff < 0 ? '低於' : '持平於');
+                            body += ' 即時追蹤：' + MONTH_LABELS[CURRENT_MONTH - 1] + '至今（尚未收官）累積報酬 <strong>' +
+                                fmtPct(CURRENT_MONTH_LIVE.r) + '</strong>，' + cmpWord + '歷史同月平均 ' + fmtPct(s.avg) +
+                                '（差 ' + fmtPct(diff) + ' 個百分點），僅供對照，未納入上方歷史統計與訊號判定。';
+                        }
+
+                        var box = document.getElementById('szVerdictBox');
+                        box.style.borderLeftColor = color;
+                        box.innerHTML = '<h4 style="color:' + color + ';">' + MONTH_LABELS[CURRENT_MONTH - 1] + '效應：' + verdict + '</h4><p>' + body + '</p>';
+                    }
+
+                    function renderChart(stats) {
+                        var w = 700, h = 220, padL = 8, padR = 8, padT = 10, padB = 26;
+                        var plotW = w - padL - padR, plotH = h - padT - padB;
+                        var zeroY = padT + plotH / 2;
+                        var avgs = [];
+                        for (var m = 1; m <= 12; m++) avgs.push(stats[m].avg);
+                        var maxAbs = Math.max(5, Math.max.apply(null, avgs.map(Math.abs)));
+                        var scale = (plotH / 2) / (maxAbs * 1.15);
+                        var slot = plotW / 12, barW = slot * 0.56;
+
+                        var parts = ['<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="' + h + '" style="overflow:visible; font-family:sans-serif;">',
+                            '<line x1="' + padL + '" y1="' + zeroY.toFixed(1) + '" x2="' + (w - padR) + '" y2="' + zeroY.toFixed(1) + '" stroke="#475569" stroke-width="1"/>'];
+                        for (var m2 = 1; m2 <= 12; m2++) {
+                            var s = stats[m2];
+                            var cx = padL + slot * (m2 - 1) + slot / 2;
+                            var barH = Math.abs(s.avg) * scale;
+                            var y = s.avg >= 0 ? zeroY - barH : zeroY;
+                            var color = s.avg >= 0 ? '#ef4444' : '#10b981';
+                            if (m2 === CURRENT_MONTH) {
+                                parts.push('<rect x="' + (cx - slot * 0.42).toFixed(1) + '" y="' + padT + '" width="' + (slot * 0.84).toFixed(1) + '" height="' + plotH + '" fill="none" stroke="#f8fafc" stroke-width="1.5" stroke-dasharray="3,3" rx="6"/>');
+                            }
+                            parts.push('<rect x="' + (cx - barW / 2).toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + barW.toFixed(1) + '" height="' + Math.max(barH, 1.5).toFixed(1) + '" rx="3" fill="' + color + '"/>');
+                            var labelY = s.avg >= 0 ? (y - 6) : (y + barH + 13);
+                            parts.push('<text x="' + cx.toFixed(1) + '" y="' + labelY.toFixed(1) + '" text-anchor="middle" font-size="10" fill="#94a3b8">' + fmtPct(s.avg) + '</text>');
+                            var tickAttr = (m2 === CURRENT_MONTH) ? 'font-weight="700" fill="#f8fafc"' : 'fill="#94a3b8"';
+                            parts.push('<text x="' + cx.toFixed(1) + '" y="' + (h - 8) + '" text-anchor="middle" font-size="11" ' + tickAttr + '>' + MONTH_LABELS[m2 - 1] + '</text>');
+                            if (s.buy) {
+                                var dotY = s.avg >= 0 ? (y - 16) : (y + barH + 21);
+                                parts.push('<circle cx="' + cx.toFixed(1) + '" cy="' + dotY.toFixed(1) + '" r="3" fill="#fbbf24"/>');
+                            }
+                        }
+                        parts.push('</svg>');
+                        document.getElementById('szChartContainer').innerHTML = parts.join('');
+                    }
+
+                    function renderTable(stats) {
+                        var rows = [];
+                        for (var m = 1; m <= 12; m++) {
+                            var s = stats[m];
+                            var rowStyle = (m === CURRENT_MONTH) ? ' style="background:rgba(251,191,36,0.08);"' : '';
+                            var pin = (m === CURRENT_MONTH) ? ' 📍' : '';
+                            var signal = s.buy ? '✓ 買進訊號' : '－';
+                            var liveCell = (CURRENT_MONTH_LIVE && CURRENT_MONTH_LIVE.m === m) ? fmtPct(CURRENT_MONTH_LIVE.r) : '－';
+                            rows.push('<tr' + rowStyle + '><td><strong>' + MONTH_LABELS[m - 1] + pin + '</strong></td><td>' +
+                                s.winRate.toFixed(0) + '%</td><td>' + fmtPct(s.avg) + '</td><td>' + fmtPct(s.next3Sum) + '</td><td>' + liveCell + '</td><td>' + signal + '</td></tr>');
+                        }
+                        document.getElementById('szTableBody').innerHTML = rows.join('');
+                    }
+
+                    function renderMeta(data) {
+                        var el = document.getElementById('szMetaLine');
+                        if (!el || !data.length) return;
+                        var first = data[0], last = data[data.length - 1];
+                        el.innerHTML = '資料期間：' + first.y + '年' + first.m + '月 ～ ' + last.y + '年' + last.m + '月（共 ' + data.length +
+                            ' 個完整月份，已排除未收官之進行中月份；「本月至今」欄為即時累積，僅供對照）。' +
+                            ' SOX 為指數無法直接交易，實務上多透過 SOXX/SMH 等 ETF 或成分股曝險；本統計僅供季節性參考，不構成投資建議。';
+                    }
+
+                    function render(years) {
+                        var data = filterByYears(years);
+                        var stats = computeStats(data);
+                        renderVerdict(stats);
+                        renderChart(stats);
+                        renderTable(stats);
+                        renderMeta(data);
+                    }
+
+                    var chips = document.querySelectorAll('.lookback-chip');
+                    chips.forEach(function(chip) {
+                        chip.addEventListener('click', function() {
+                            chips.forEach(function(c) { c.classList.remove('active'); });
+                            chip.classList.add('active');
+                            var years = chip.dataset.years === 'all' ? 'all' : parseInt(chip.dataset.years, 10);
+                            render(years);
+                        });
+                    });
+                })();
+            </script>
+        
+        </div>
+
+        <!-- Section 8: Taiwan Stock Opening Strategy -->
+        <div class="taiwan-box">
+            <div class="taiwan-header">
+                <span>🇹🇼</span> 台灣看盤重點與開盤策略 (Taiwan Opening Strategy)
+            </div>
+            <div style="font-size: 0.95rem; line-height: 1.8;">
+                <p>• <strong>台積電 ADR (TSM) 觀察</strong>：最新報價 404.25 (+0.23%)。台積電 ADR 走勢為台股開盤指數波動之直接扣抵指標，若 ADR 承壓，大盤開盤指數將面臨點數調整壓力。</p>
+                <p>• <strong>匯率動態 (USD/TWD)</strong>：美元兌新台幣報 32.29 (-0.01%)，需密切留意外資淨匯出與期貨空單避險減碼趨勢。</p>
+                <p>• <strong>觀盤戰略（重質不重量）</strong>：美股科技股與費半表現偏強，可望對台股電子權值股形成挹注；然中長期 AI 基礎建設需求未變。現階段戰術應秉持<strong>「重質不重量、控制總持倉」</strong>原則，嚴格限制槓桿比率，避開高本益比純題材炒作股，伺機圍繞具備實質獲利保護、高股息防禦屬性與權值支撐之績優標的擇優佈局。 【策略研判】法人普遍不建議追高搶反彈：元大投顧建議降低槓桿、保留現金，於半年線附近分批布局，8月台股預估區間39,000~45,000點；周代運提醒本輪急漲主因是外資回補空單與超跌反彈而非基本面轉強，8月大機率呈現區間震盪整理。後續應緊盯兩大關鍵訊號：一是外資是否延續買超半導體類股（決定反彈能否延續的資金面指標），二是Nvidia 8/26財報對下一季出貨展望是否上修（AI供應鏈基本面驗證訊號），此外美國7月CPI、Jackson Hole央行年會、MSCI季度調整亦須留意。台積電、聯發科若能延續7/31逆勢強勢，可留意其對電子權值股的帶動力道；惟南韓記憶體股經歷史上最深修正後的史上最大單日反彈，提醒市場對AI供應鏈評價分歧仍大，不宜將單一類股的急漲行情線性外推至全區域。</p>
+            </div>
+        </div>
+
+        <footer>FinLab Daily Automated Morning Report System © 2026 · Edited by Hsiu-Chuan Lee</footer>
+    </div>
+
+    <script>
+        // Embedded at generation time so the history dropdown works even when this
+        // file is opened directly (file://), where fetch() against reports.json
+        // is blocked by the browser. If served over http(s), the fetch below still
+        // runs first and wins with the freshest list.
+        const EMBEDDED_REPORTS = [{"date": "2026-08-03", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-08-03.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-31", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-31.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-30", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-30.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-29", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-29.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-28", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-28.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-27", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-27.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-26", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-26.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-25", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-25.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}, {"date": "2026-07-24", "title": "全球市場觀盤與台股開盤焦點", "filename": "2026-07-24.html", "summary": "包含觀盤速覽重點、美股四大指數與費半日內走勢圖、匯率/債市/黃金大宗商品與區域股市分析"}];
+
+        function populateHistorySelect(data) {
+            const selector = document.getElementById('quickHistorySelect');
+            if (!selector) return;
+            selector.innerHTML = '<option value="">📅 切換歷史日報...</option>';
+            data.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.filename;
+                opt.textContent = `${item.date} ${item.date === '2026-08-03' ? '(本日)' : ''}`;
+                if (item.date === '2026-08-03') opt.selected = true;
+                selector.appendChild(opt);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('reports.json?t=' + new Date().getTime())
+                .then(res => res.json())
+                .then(data => populateHistorySelect(data))
+                .catch(err => {
+                    console.log('reports.json fetch failed (expected when opening this file directly); using embedded list.', err);
+                    populateHistorySelect(EMBEDDED_REPORTS);
+                });
+        });
+    </script>
+</body>
+</html>
