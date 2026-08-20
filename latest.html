@@ -2,11 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="1; url=2026-08-20.html">
+  <meta http-equiv="refresh" content="1; url=2026-08-21.html">
   <title>正在導向最新晨報...</title>
 </head>
 <body>
-  <p>正在導向最新晨報... 若未自動跳轉請點<a href="2026-08-20.html">這裡</a>。</p>
+  <p>正在導向最新晨報... 若未自動跳轉請點<a href="2026-08-21.html">這裡</a>。</p>
   <script>
     fetch('reports.json?t=' + new Date().getTime(), { cache: 'no-store' })
       .then(function(r) { return r.json(); })
@@ -14,11 +14,11 @@
         if (data && data.length > 0 && data[0].filename) {
           window.location.replace(data[0].filename);
         } else {
-          window.location.replace("2026-08-20.html");
+          window.location.replace("2026-08-21.html");
         }
       })
       .catch(function() {
-        window.location.replace("2026-08-20.html");
+        window.location.replace("2026-08-21.html");
       });
   </script>
 </body>
